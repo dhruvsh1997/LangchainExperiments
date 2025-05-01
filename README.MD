@@ -18,15 +18,20 @@ This repository provides a modular journey through the LangChain ecosystem, with
 ```
 LangChain-Playlist/
 ├── Loader and Splitters/
-│   ├── PyPDFLoader_with_SemanticChunker.ipynb
-│   └── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
+│   ├── PDF Based/
+│   │   ├── PyPDFLoader_with_SemanticChunker.ipynb
+│   │   ├── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
+│   │   └── PyMuPDFLoaderWithRecursiveCharacterTextSplitter.ipynb
+│   └── HTML_URL Based/
+│   |   └── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
+│   |   └── [Coming Soon]
+│   └── [Coming Soon]
 │
 ├── Embedding Models/
 │   ├── BASE Embedding/
 │   │   ├── all-MiniLM-L12-v2.ipynb
 │   │   ├── all-MiniLM-L6-v2.ipynb
 │   │   └── gte-multilingual-base.ipynb
-│   |   └── [Coming Soon]
 │   └── ReRanking Embedding/
 │       └── [Coming Soon]
 │
@@ -37,7 +42,7 @@ LangChain-Playlist/
 │   ├── Qdrant.ipynb
 │   ├── Pinecone.ipynb
 │   └── Redis.ipynb
-│   └── [Coming Soon]
+│       └── [Coming Soon]
 │
 ├── RetrieverChains/
 │   └── [Coming Soon]
@@ -53,11 +58,13 @@ LangChain-Playlist/
 
 ### 📄 Document Loaders & Splitters
 
-Each notebook contains rigorous comparative analysis with **interpretable metrics**:
+Organized by document types with specialized loaders and splitters:
+
+#### PDF Based Documents
 
 <table>
   <tr>
-    <td width="50%">
+    <td width="33%">
       <b>PyPDFLoader + SemanticChunker</b><br>
       <ul>
         <li>Semantic flow scoring</li>
@@ -65,12 +72,35 @@ Each notebook contains rigorous comparative analysis with **interpretable metric
         <li>Token cost efficiency</li>
       </ul>
     </td>
-    <td width="50%">
+    <td width="33%">
       <b>UnstructuredPDFLoader + RecursiveCharacterTextSplitter</b><br>
       <ul>
         <li>Rule-based chunking efficiency</li>
         <li>Memory utilization analysis</li>
         <li>Content structure preservation</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>PyMuPDFLoader + RecursiveCharacterTextSplitter</b><br>
+      <ul>
+        <li>Enhanced PDF parsing</li>
+        <li>Structure-aware chunking</li>
+        <li>Performance benchmark comparison</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### HTML/URL Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>BSHTMLLoader + HTMLHeaderTextSplitter</b><br>
+      <ul>
+        <li>Web content extraction</li>
+        <li>Header-based document structuring</li>
+        <li>HTML-specific chunking strategies</li>
       </ul>
     </td>
   </tr>
