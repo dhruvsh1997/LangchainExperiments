@@ -1,67 +1,141 @@
-# 🧠 LangChain Tutorial Code Repository
+# 🧠 LangChain Experiments & Tutorials
 
-Welcome to the official code repository for my **LangChain Playlist Series**!
+![LangChain](https://img.shields.io/badge/LangChain-Framework-green)
+![Notebooks](https://img.shields.io/badge/Format-Colab_Notebooks-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-This repository contains hands-on, modular notebooks designed to explore and demonstrate key components of the LangChain framework — from document loaders and splitters to embedding models, vector databases, and retrieval-augmented generation (RAG) workflows.
+A comprehensive collection of **hands-on Colab-style notebooks** for practical implementations and benchmarking of core LangChain components. Step through the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines.
 
-> 🔬 **This is a living repository** — content will continuously grow and evolve as we explore deeper concepts.
+## 🧩 Repository Overview
+
+This repository provides a modular journey through the LangChain ecosystem, with each component carefully isolated to allow for:
+- **Focused learning** of individual components
+- **Comparative benchmarking** across implementation options
+- **Plug-and-play solutions** for your LLM-powered applications
 
 ## 📁 Repository Structure
 
-The repository is organized into the following folders:
-
-| Folder Name | Description |
-|-------------|-------------|
-| `Loader and Splitters` | Notebooks demonstrating different document loaders and text splitters |
-| `Embedding Models` | Guides and experiments using various embedding models (OpenAI, BGE, etc) |
-| `VectorDBs` | Examples of working with FAISS, Chroma, Pinecone, and other vector stores |
-| `RetrieverChains` | Implementing retrievers and chains for question answering and RAG |
-| `Tools and LLMs` | Working with LangChain tools, agents, and large language models (LLMs) |
-
-## 📘 Current Focus: `Loader and Splitters`
-
-### ✅ Implemented:
-
-This folder currently includes notebooks demonstrating and benchmarking the following loader + splitter combinations:
-
-1. **PyPDFLoader + SemanticChunker**
-   - Focused on semantic-aware chunking using sentence transformers
-   - Performance metrics include token count, semantic flow, chunk variability, and structural preservation
-
-2. **UnstructuredPDFLoader + RecursiveCharacterTextSplitter**
-   - Heuristic-based PDF extraction with rule-based recursive text splitting
-   - Benchmarked for content quality, chunk consistency, memory usage, and processing time
-
-Each notebook includes:
-- Full pipeline: Loading → Splitting → Metrics Evaluation
-- Interpretive, Colab-ready structure
-- Comments and explanations for educational clarity
-- Loader & splitter performance comparisons
-
-## 📺 YouTube Playlist
-
-👉 [LangChain Playlist on YouTube](#) *(update this with your actual link)*
-
-Follow along the series and clone this repo to run code alongside the tutorials.
-
-## 💡 Contribution & Roadmap
-
-While this repository is part of a tutorial series, I welcome:
-- Suggestions on advanced loader/splitter pairings
-- Requests for new model demos
-- Pull requests once the structure matures
-
-### 📅 Coming Soon:
-- Embedding Model Comparisons
-- FAISS & Chroma Indexing
-- Retrieval Chains + Custom Prompting
-- Agent Toolchains
-- LangGraph workflows
-
-## 🛠️ Setup Instructions
-
-Ensure you have the right environment for running the notebooks:
-
-```bash
-pip install langchain langchain-community langchain-text-splitters sentence-transformers transformers unstructured psutil
 ```
+LangChain-Playlist/
+├── Loader and Splitters/
+│   ├── PyPDFLoader_with_SemanticChunker.ipynb
+│   └── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
+│
+├── Embedding Models/
+│   ├── BASE Embedding/
+│   │   ├── all-MiniLM-L12-v2.ipynb
+│   │   ├── all-MiniLM-L6-v2.ipynb
+│   │   └── gte-multilingual-base.ipynb
+│   └── ReRanking Embedding/
+│       └── [Coming Soon]
+│
+├── VectorDB's/
+│   ├── FAISS.ipynb
+│   ├── ChromaDB.ipynb
+│   ├── Weaviate.ipynb
+│   ├── Qdrant.ipynb
+│   ├── Pinecone.ipynb
+│   └── Redis.ipynb
+│
+├── RetrieverChains/
+│   └── [Coming Soon]
+│
+├── Tools/
+│   └── [Coming Soon]
+│
+├── LLMs/
+│   └── [Coming Soon]
+```
+
+## 🔍 Currently Available Components
+
+### 📄 Document Loaders & Splitters
+
+Each notebook contains rigorous comparative analysis with **interpretable metrics**:
+
+<table>
+  <tr>
+    <td width="50%">
+      <b>PyPDFLoader + SemanticChunker</b><br>
+      <ul>
+        <li>Semantic flow scoring</li>
+        <li>Chunk coherence metrics</li>
+        <li>Token cost efficiency</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <b>UnstructuredPDFLoader + RecursiveCharacterTextSplitter</b><br>
+      <ul>
+        <li>Rule-based chunking efficiency</li>
+        <li>Memory utilization analysis</li>
+        <li>Content structure preservation</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### 🧬 Embedding Models
+
+Base embedding model implementations with performance comparisons:
+
+<table>
+  <tr>
+    <td><b>all-MiniLM-L6-v2</b></td>
+    <td><b>all-MiniLM-L12-v2</b></td>
+    <td><b>gte-multilingual-base</b></td>
+  </tr>
+</table>
+
+### 🧲 Vector Databases
+
+Practical integration examples across multiple vector stores:
+
+<div align="center">
+  <b>FAISS</b> • <b>ChromaDB</b> • <b>Weaviate</b> • <b>Qdrant</b> • <b>Pinecone</b> • <b>Redis</b>
+</div>
+
+## 🚧 Coming Soon
+
+<table>
+  <tr>
+    <td><b>🔍 Retriever Chains</b><br>Multi-vector and hybrid retrievers</td>
+    <td><b>⚙️ LangChain Tools</b><br>Calculator, SerpAPI, etc.</td>
+  </tr>
+  <tr>
+    <td><b>🧠 LLMs</b><br>GPT-4, Claude, open-source LLMs</td>
+    <td><b>🧪 RAG Pipelines</b><br>Complete retrieval-augmented generation workflows</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>🧑‍🔬 Benchmarking Tools</b><br>Embedding effectiveness, latency, chunk impact analysis</td>
+  </tr>
+</table>
+
+## 💻 How to Use
+
+Each notebook follows a **Colab-friendly format** with:
+
+1. **Clear explanations** of concepts and implementation details
+2. **Interactive parameters** you can modify to test different configurations
+3. **Visual metrics** and performance comparisons
+4. **Self-contained examples** that work with minimal setup
+
+> Perfect for researchers, engineers, and students exploring LLM applications with LangChain.
+
+## 🤝 Contribute
+
+Contributions are welcome in many forms:
+
+- ⭐ Star this repo to show support
+- 🐛 Open issues for bugs or clarifications
+- 💡 Suggest improvements or new components
+- 🧪 Submit PRs for new implementations
+
+## 📜 License
+
+This repository is licensed under the **MIT License**.
+
+---
+
+<div align="center">
+  <i>Built with ❤️ for the LangChain community</i>
+</div>
