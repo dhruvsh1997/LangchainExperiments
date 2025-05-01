@@ -26,6 +26,7 @@ LangChain-Playlist/
 │   │   ├── all-MiniLM-L12-v2.ipynb
 │   │   ├── all-MiniLM-L6-v2.ipynb
 │   │   └── gte-multilingual-base.ipynb
+│   |   └── [Coming Soon]
 │   └── ReRanking Embedding/
 │       └── [Coming Soon]
 │
@@ -36,6 +37,7 @@ LangChain-Playlist/
 │   ├── Qdrant.ipynb
 │   ├── Pinecone.ipynb
 │   └── Redis.ipynb
+│   └── [Coming Soon]
 │
 ├── RetrieverChains/
 │   └── [Coming Soon]
