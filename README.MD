@@ -23,15 +23,15 @@ LangChain-Playlist/
 │   │   ├── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
 │   │   └── PyMuPDFLoaderWithRecursiveCharacterTextSplitter.ipynb
 │   └── HTML_URL Based/
-│   |   └── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
-│   |   └── [Coming Soon]
-│   └── [Coming Soon]
+│       └── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
 │
 ├── Embedding Models/
 │   ├── BASE Embedding/
 │   │   ├── all-MiniLM-L12-v2.ipynb
 │   │   ├── all-MiniLM-L6-v2.ipynb
-│   │   └── gte-multilingual-base.ipynb
+│   │   ├── gte-multilingual-base.ipynb
+│   │   ├── OpenAIEmbedding-text_embedding_3_large.ipynb
+│   │   └── GIST-Embedding-v0.ipynb
 │   └── ReRanking Embedding/
 │       └── [Coming Soon]
 │
@@ -42,7 +42,6 @@ LangChain-Playlist/
 │   ├── Qdrant.ipynb
 │   ├── Pinecone.ipynb
 │   └── Redis.ipynb
-│       └── [Coming Soon]
 │
 ├── RetrieverChains/
 │   └── [Coming Soon]
@@ -115,6 +114,11 @@ Base embedding model implementations with performance comparisons:
     <td><b>all-MiniLM-L6-v2</b></td>
     <td><b>all-MiniLM-L12-v2</b></td>
     <td><b>gte-multilingual-base</b></td>
+  </tr>
+  <tr>
+    <td><b>OpenAI text-embedding-3-large</b></td>
+    <td><b>GIST-Embedding-v0</b></td>
+    <td></td>
   </tr>
 </table>
 
