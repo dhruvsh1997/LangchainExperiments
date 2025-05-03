@@ -31,7 +31,10 @@ LangChain-Playlist/
 │   │   ├── all-MiniLM-L6-v2.ipynb
 │   │   ├── gte-multilingual-base.ipynb
 │   │   ├── OpenAIEmbedding-text_embedding_3_large.ipynb
-│   │   └── GIST-Embedding-v0.ipynb
+│   │   ├── GIST-Embedding-v0.ipynb
+│   │   ├── cohere_embed_english_v3_0.ipynb
+│   │   ├── all-mpnet-base-v2.ipynb
+│   │   └── multi-qa-mpnet-base-dot-v1.ipynb
 │   └── ReRanking Embedding/
 │       └── [Coming Soon]
 │
@@ -118,6 +121,11 @@ Base embedding model implementations with performance comparisons:
   <tr>
     <td><b>OpenAI text-embedding-3-large</b></td>
     <td><b>GIST-Embedding-v0</b></td>
+    <td><b>cohere_embed_english_v3_0</b></td>
+  </tr>
+  <tr>
+    <td><b>all-mpnet-base-v2</b></td>
+    <td><b>multi-qa-mpnet-base-dot-v1</b></td>
     <td></td>
   </tr>
 </table>
