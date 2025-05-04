@@ -22,8 +22,11 @@ LangChain-Playlist/
 │   │   ├── PyPDFLoader_with_SemanticChunker.ipynb
 │   │   ├── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
 │   │   └── PyMuPDFLoaderWithRecursiveCharacterTextSplitter.ipynb
-│   └── HTML_URL Based/
-│       └── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
+│   ├── HTML_URL Based/
+│   │   ├── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
+│   │   └── UnstructuredHTMLLoaderWithRecursiveCharacterTextSplitter.ipynb
+│   └── Markdown_Based/
+│       └── UnstructuredMarkdownLoader_with_MarkdownHeaderTextSplitter.ipynb
 │
 ├── Embedding Models/
 │   ├── BASE Embedding/
@@ -34,7 +37,8 @@ LangChain-Playlist/
 │   │   ├── GIST-Embedding-v0.ipynb
 │   │   ├── cohere_embed_english_v3_0.ipynb
 │   │   ├── all-mpnet-base-v2.ipynb
-│   │   └── multi-qa-mpnet-base-dot-v1.ipynb
+│   │   ├── multi-qa-mpnet-base-dot-v1.ipynb
+│   │   └── msmarco_distilbert_cos_v5.ipynb
 │   └── ReRanking Embedding/
 │       └── [Coming Soon]
 │
@@ -97,12 +101,35 @@ Organized by document types with specialized loaders and splitters:
 
 <table>
   <tr>
-    <td>
+    <td width="50%">
       <b>BSHTMLLoader + HTMLHeaderTextSplitter</b><br>
       <ul>
         <li>Web content extraction</li>
         <li>Header-based document structuring</li>
         <li>HTML-specific chunking strategies</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <b>UnstructuredHTMLLoader + RecursiveCharacterTextSplitter</b><br>
+      <ul>
+        <li>Comprehensive HTML parsing</li>
+        <li>Content-focused extraction</li>
+        <li>Character-based recursive splitting</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### Markdown Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>UnstructuredMarkdownLoader + MarkdownHeaderTextSplitter</b><br>
+      <ul>
+        <li>Markdown document processing</li>
+        <li>Header-based hierarchical splitting</li>
+        <li>Structure-preserving chunking</li>
       </ul>
     </td>
   </tr>
@@ -126,7 +153,7 @@ Base embedding model implementations with performance comparisons:
   <tr>
     <td><b>all-mpnet-base-v2</b></td>
     <td><b>multi-qa-mpnet-base-dot-v1</b></td>
-    <td></td>
+    <td><b>msmarco_distilbert_cos_v5</b></td>
   </tr>
 </table>
 
