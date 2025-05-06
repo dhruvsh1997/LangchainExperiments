@@ -13,7 +13,7 @@ This repository provides a modular journey through the LangChain ecosystem, with
 - **Comparative benchmarking** across implementation options
 - **Plug-and-play solutions** for your LLM-powered applications
 
-## 📁 Repository Structure
+## 📁 Repository Structures
 
 ```
 LangChain-Playlist/
