@@ -198,7 +198,7 @@ Contributions are welcome in many forms:
 
 - ⭐ Star this repo to show support
 - 🐛 Open issues for bugs or clarifications
-- 💡 Suggest improvements or new components
+- 💡 Suggest improvements or new component
 - 🧪 Submit PRs for new implementations
 
 ## 📜 License
