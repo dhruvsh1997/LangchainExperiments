@@ -50,7 +50,7 @@ LangChain-Playlist/
 │   ├── Pinecone.ipynb
 │   └── Redis.ipynb
 │
-├── RetrieverChains/
+├── Chains/
 │   └── [Coming Soon]
 │
 ├── Tools/
