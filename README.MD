@@ -203,7 +203,7 @@ Contributions are welcome in many forms:
 
 ## 📜 License
 
-This repository is licensed under the **MIT License**.
+This repository is licensed under the **YIT License**.
 
 ---
 
