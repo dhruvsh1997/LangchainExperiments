@@ -4,7 +4,7 @@
 ![Notebooks](https://img.shields.io/badge/Format-Colab_Notebooks-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-A comprehensive collection of **hands-on Colab-style notebooks** for practical implementations and benchmarking of core LangChain components. Step through the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines.
+A comprehensive collections of **hands-on Colab-style notebooks** for practical implementations and benchmarking of core LangChain components. Step through the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines.
 
 ## 🧩 Repository Overview
 
