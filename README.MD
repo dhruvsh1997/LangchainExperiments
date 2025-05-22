@@ -8,7 +8,7 @@ A comprehensive collections of **hands-on Colab-style notebooks** for practical 
 
 ## 🧩 Repository Overview
 
-This repository provides a modular journey through the LangChain ecosystem, with each component carefully isolated to allow for:
+This repository provides a modular journey through the Langchain ecosystem, with each component carefully isolated to allow for:
 - **Focused learning** of individual components
 - **Comparative benchmarking** across implementation options
 - **Plug-and-play solutions** for your LLM-powered applications
