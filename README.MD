@@ -22,6 +22,8 @@ LangChain-Playlist/
 │   │   ├── PyPDFLoader_with_SemanticChunker.ipynb
 │   │   ├── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
 │   │   └── PyMuPDFLoaderWithRecursiveCharacterTextSplitter.ipynb
+│   ├── TextFile Based/
+│   │   └── TextLoader_with_SemanticChunker.ipynb
 │   ├── HTML_URL Based/
 │   │   ├── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
 │   │   └── UnstructuredHTMLLoaderWithRecursiveCharacterTextSplitter.ipynb
@@ -92,6 +94,22 @@ Organized by document types with specialized loaders and splitters:
         <li>Enhanced PDF parsing</li>
         <li>Structure-aware chunking</li>
         <li>Performance benchmark comparison</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### TextFile Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>TextLoader + SemanticChunker</b><br>
+      <ul>
+        <li>Plain text document processing</li>
+        <li>Semantic boundary detection</li>
+        <li>Context-aware chunking for .txt files</li>
+        <li>Optimized for narrative and unstructured text</li>
       </ul>
     </td>
   </tr>
@@ -203,7 +221,7 @@ Contributions are welcome in many forms:
 
 ## 📜 License
 
-This repository is licensed under the **YIT License**.
+This repository is licensed under the **MIT License**.
 
 ---
 
