@@ -1,0 +1,118 @@
+most common use case for each of the API access techniques (REST, GraphQL, gRPC, WebSocket, Webhooks, Serverless) — explained with clarity and practical examples.
+
+✅ 1. REST API
+🔧 Most common use case:
+
+Web and mobile applications interacting with standard CRUD APIs.
+
+🛠 Example:
+A React/Flutter frontend gets data from your Django backend via /api/users/, /api/products/, /api/orders/.
+
+Why it's used:
+Simple
+
+Well-supported by browsers, tools, and frameworks (like Django REST Framework)
+
+Easy to cache and debug
+
+✅ 2. GraphQL
+🔧 Most common use case:
+
+Frontend-heavy apps (like dashboards or mobile apps) needing flexible, nested data fetching.
+
+🛠 Example:
+A React app shows a profile page with user info, latest posts, and their friends — in one query:
+
+graphql
+Copy
+Edit
+query {
+  user(id: 1) {
+    name
+    posts { title }
+    friends { name }
+  }
+}
+Why it's used:
+Reduces the number of requests
+
+Avoids over-fetching/under-fetching
+
+Gives the frontend full control over what it needs
+
+✅ 3. gRPC
+🔧 Most common use case:
+
+High-performance microservices-to-microservices communication inside backends.
+
+🛠 Example:
+A machine learning model service talks to a recommendation engine service using gRPC.
+
+A Golang payment service calls a user account service via gRPC.
+
+Why it's used:
+Super fast (binary over HTTP/2)
+
+Strongly typed (protobuf)
+
+Supports streaming
+
+📌 Note: Not designed for browsers or public APIs.
+
+✅ 4. WebSocket
+🔧 Most common use case:
+
+Real-time communication (bi-directional).
+
+🛠 Example:
+Live chat apps (like WhatsApp web)
+
+Live sports scores or stock tickers
+
+Multiplayer game state updates
+
+Why it's used:
+Maintains an open connection (low latency)
+
+Server and client can both push data at any time
+
+Efficient for real-time interaction
+
+🛠 In Django, this is typically implemented using Django Channels.
+
+✅ 5. Webhooks
+🔧 Most common use case:
+
+Triggering actions in one system from another system.
+
+🛠 Example:
+Stripe sends a webhook to your Django app when a payment succeeds.
+
+GitHub sends a webhook when a new commit is pushed to a repository.
+
+Why it's used:
+Asynchronous event-driven communication
+
+Doesn’t require constant polling
+
+Great for automation (CI/CD, payment processing, etc.)
+
+✅ 6. Serverless Functions (like AWS Lambda, Vercel, etc.)
+🔧 Most common use case:
+
+On-demand, small-scale backend logic (without managing servers).
+
+🛠 Example:
+An image resize function triggered when a user uploads a photo.
+
+A webhook handler that validates a signature and logs a transaction.
+
+Why it's used:
+No server to manage or scale
+
+Cost-effective for low-traffic or event-based tasks
+
+Fast to deploy and run
+
+📌 These can be used alongside Django, not usually instead of Django.
+
