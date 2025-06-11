@@ -24,6 +24,8 @@ LangChain-Playlist/
 │   │   └── PyMuPDFLoaderWithRecursiveCharacterTextSplitter.ipynb
 │   ├── TextFile Based/
 │   │   └── TextLoader_with_SemanticChunker.ipynb
+│   ├── ExcelFile Based/
+│   │   └── UnstructuredExcelLoader_with_CharacterTextSplitter.ipynb
 │   ├── HTML_URL Based/
 │   │   ├── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
 │   │   └── UnstructuredHTMLLoaderWithRecursiveCharacterTextSplitter.ipynb
@@ -110,6 +112,22 @@ Organized by document types with specialized loaders and splitters:
         <li>Semantic boundary detection</li>
         <li>Context-aware chunking for .txt files</li>
         <li>Optimized for narrative and unstructured text</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### ExcelFile Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>UnstructuredExcelLoader + CharacterTextSplitter</b><br>
+      <ul>
+        <li>Excel spreadsheet data extraction (.xlsx, .xls)</li>
+        <li>Cell-based content processing</li>
+        <li>Character-level text splitting for tabular data</li>
+        <li>Handles multiple sheets and structured data formats</li>
       </ul>
     </td>
   </tr>
