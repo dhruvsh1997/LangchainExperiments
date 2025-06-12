@@ -1,0 +1,80 @@
+{
+  "api_access_techniques": [
+    {
+      "name": "REST API",
+      "most_common_use_case": "Web and mobile applications interacting with standard CRUD APIs.",
+      "example": {
+        "description": "A React/Flutter frontend gets data from your Django backend via /api/users/, /api/products/, /api/orders/."
+      },
+      "why_its_used": [
+        "Simple",
+        "Well-supported by browsers, tools, and frameworks (like Django REST Framework)",
+        "Easy to cache and debug"
+      ]
+    },
+    {
+      "name": "GraphQL",
+      "most_common_use_case": "Frontend-heavy apps (like dashboards or mobile apps) needing flexible, nested data fetching.",
+      "example": {
+        "description": "A React app shows a profile page with user info, latest posts, and their friends — in one query.",
+        "query": "query { user(id: 1) { name posts { title } friends { name } } }"
+      },
+      "why_its_used": [
+        "Reduces the number of requests",
+        "Avoids over-fetching/under-fetching",
+        "Gives the frontend full control over what it needs"
+      ]
+    },
+    {
+      "name": "gRPC",
+      "most_common_use_case": "High-performance microservices-to-microservices communication inside backends.",
+      "example": {
+        "description": "A machine learning model service talks to a recommendation engine service using gRPC. A Golang payment service calls a user account service via gRPC."
+      },
+      "why_its_used": [
+        "Super fast (binary over HTTP/2)",
+        "Strongly typed (protobuf)",
+        "Supports streaming"
+      ],
+      "note": "Not designed for browsers or public APIs."
+    },
+    {
+      "name": "WebSocket",
+      "most_common_use_case": "Real-time communication (bi-directional).",
+      "example": {
+        "description": "Live chat apps (like WhatsApp web), live sports scores or stock tickers, multiplayer game state updates."
+      },
+      "why_its_used": [
+        "Maintains an open connection (low latency)",
+        "Server and client can both push data at any time",
+        "Efficient for real-time interaction"
+      ],
+      "implementation": "In Django, this is typically implemented using Django Channels."
+    },
+    {
+      "name": "Webhooks",
+      "most_common_use_case": "Triggering actions in one system from another system.",
+      "example": {
+        "description": "Stripe sends a webhook to your Django app when a payment succeeds. GitHub sends a webhook when a new commit is pushed to a repository."
+      },
+      "why_its_used": [
+        "Asynchronous event-driven communication",
+        "Doesn’t require constant polling",
+        "Great for automation (CI/CD, payment processing, etc.)"
+      ]
+    },
+    {
+      "name": "Serverless Functions",
+      "most_common_use_case": "On-demand, small-scale backend logic (without managing servers).",
+      "example": {
+        "description": "An image resize function triggered when a user uploads a photo. A webhook handler that validates a signature and logs a transaction."
+      },
+      "why_its_used": [
+        "No server to manage or scale",
+        "Cost-effective for low-traffic or event-based tasks",
+        "Fast to deploy and run"
+      ],
+      "note": "These can be used alongside Django, not usually instead of Django."
+    }
+  ]
+}
