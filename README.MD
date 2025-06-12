@@ -26,6 +26,10 @@ LangChain-Playlist/
 │   │   └── TextLoader_with_SemanticChunker.ipynb
 │   ├── ExcelFile Based/
 │   │   └── UnstructuredExcelLoader_with_CharacterTextSplitter.ipynb
+│   ├── Document Based/
+│   │   └── UnstructuredWordDocumentLoader_with_RecursiveCharacterTextSplitter.ipynb
+│   ├── JSON Based/
+│   │   └── JSONLoader_with_RecursiveJsonSplitter.ipynb
 │   ├── HTML_URL Based/
 │   │   ├── BSHTMLLoaderWithHTMLHeaderTextSplitter.ipynb
 │   │   └── UnstructuredHTMLLoaderWithRecursiveCharacterTextSplitter.ipynb
@@ -128,6 +132,38 @@ Organized by document types with specialized loaders and splitters:
         <li>Cell-based content processing</li>
         <li>Character-level text splitting for tabular data</li>
         <li>Handles multiple sheets and structured data formats</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### Document Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>UnstructuredWordDocumentLoader + RecursiveCharacterTextSplitter</b><br>
+      <ul>
+        <li>Microsoft Word document processing (.docx, .doc)</li>
+        <li>Rich text formatting preservation</li>
+        <li>Recursive chunking for complex document structures</li>
+        <li>Handles headers, tables, and embedded content</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### JSON Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>JSONLoader + RecursiveJsonSplitter</b><br>
+      <ul>
+        <li>JSON data structure processing</li>
+        <li>Nested object and array handling</li>
+        <li>Schema-aware recursive splitting</li>
+        <li>Preserves hierarchical relationships in data</li>
       </ul>
     </td>
   </tr>
