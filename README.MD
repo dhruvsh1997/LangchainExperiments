@@ -28,6 +28,8 @@ LangChain-Playlist/
 │   │   └── UnstructuredExcelLoader_with_CharacterTextSplitter.ipynb
 │   ├── Document Based/
 │   │   └── UnstructuredWordDocumentLoader_with_RecursiveCharacterTextSplitter.ipynb
+│   ├── PPT Based/
+│   │   └── UnstructuredPowerPointLoader_with_CharacterTextSplitter.ipynb
 │   ├── JSON Based/
 │   │   └── JSONLoader_with_RecursiveJsonSplitter.ipynb
 │   ├── HTML_URL Based/
@@ -148,6 +150,22 @@ Organized by document types with specialized loaders and splitters:
         <li>Rich text formatting preservation</li>
         <li>Recursive chunking for complex document structures</li>
         <li>Handles headers, tables, and embedded content</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### PPT Based Documents
+
+<table>
+  <tr>
+    <td>
+      <b>UnstructuredPowerPointLoader + CharacterTextSplitter</b><br>
+      <ul>
+        <li>PowerPoint presentation processing (.pptx, .ppt)</li>
+        <li>Slide-by-slide content extraction</li>
+        <li>Text and speaker notes processing</li>
+        <li>Handles titles, bullet points, and embedded objects</li>
       </ul>
     </td>
   </tr>
