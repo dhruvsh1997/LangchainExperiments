@@ -60,6 +60,11 @@ LangChain-Playlist/
 │   ├── Pinecone.ipynb
 │   └── Redis.ipynb
 │
+├── PromptsTemplates/
+│   ├── PromptTemplateExample.ipynb
+│   ├── ChatPromptTemplateExample.ipynb
+│   └── ChatMessagePromptTemplateExample.ipynb
+│
 ├── Chains/
 │   └── [Coming Soon]
 │
@@ -254,6 +259,42 @@ Practical integration examples across multiple vector stores:
 <div align="center">
   <b>FAISS</b> • <b>ChromaDB</b> • <b>Weaviate</b> • <b>Qdrant</b> • <b>Pinecone</b> • <b>Redis</b>
 </div>
+
+### 📝 Prompt Templates
+
+Essential prompt engineering components for building robust LLM applications:
+
+<table>
+  <tr>
+    <td width="33%">
+      <b>PromptTemplate</b><br>
+      <ul>
+        <li>Basic prompt structure and formatting</li>
+        <li>Variable substitution and templating</li>
+        <li>Input validation and formatting</li>
+        <li>Reusable prompt components</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>ChatPromptTemplate</b><br>
+      <ul>
+        <li>Multi-turn conversation handling</li>
+        <li>System, human, and AI message formatting</li>
+        <li>Chat-specific prompt engineering</li>
+        <li>Context window optimization</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>ChatMessagePromptTemplate</b><br>
+      <ul>
+        <li>Individual message template creation</li>
+        <li>Role-based message formatting</li>
+        <li>Dynamic message composition</li>
+        <li>Message chain construction</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## 🚧 Coming Soon
 
