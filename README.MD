@@ -49,8 +49,10 @@ LangChain-Playlist/
 │   │   ├── all-mpnet-base-v2.ipynb
 │   │   ├── multi-qa-mpnet-base-dot-v1.ipynb
 │   │   └── msmarco_distilbert_cos_v5.ipynb
-│   └── ReRanking Embedding/
-│       └── [Coming Soon]
+│   └── RERANKER Models/
+│       ├── ms-marco-MiniLM-L-6-v2.ipynb
+│       ├── ms-marco-MiniLM-L-12-v2.ipynb
+│       └── tomaarsen-ModernBERT-base-gooaq-bce.ipynb
 │
 ├── VectorDB's/
 │   ├── FAISS.ipynb
@@ -252,6 +254,40 @@ Base embedding model implementations with performance comparisons:
   </tr>
 </table>
 
+**Reranker Models** for enhanced retrieval accuracy:
+
+<table>
+  <tr>
+    <td width="33%">
+      <b>ms-marco-MiniLM-L-6-v2</b><br>
+      <ul>
+        <li>Lightweight reranking model</li>
+        <li>Fast inference for production use</li>
+        <li>Optimized for passage ranking</li>
+        <li>MS MARCO trained for relevance scoring</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>ms-marco-MiniLM-L-12-v2</b><br>
+      <ul>
+        <li>Enhanced reranking capabilities</li>
+        <li>Higher accuracy vs L-6 variant</li>
+        <li>Balanced performance and speed</li>
+        <li>Advanced passage relevance scoring</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>tomaarsen-ModernBERT-base-gooaq-bce</b><br>
+      <ul>
+        <li>Modern BERT architecture</li>
+        <li>Binary cross-entropy training</li>
+        <li>GooAQ dataset optimization</li>
+        <li>State-of-the-art reranking performance</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 ### 🧲 Vector Databases
 
 Practical integration examples across multiple vector stores:
@@ -301,7 +337,7 @@ Essential prompt engineering components for building robust LLM applications:
 <table>
   <tr>
     <td><b>🔍 Retriever Chains</b><br>Multi-vector and hybrid retrievers</td>
-    <td><b>⚙️ LangChain Tools</b><br>Calculator, SerpAPI, etc.</td>
+    <td><b⚙️ LangChain Tools</b><br>Calculator, SerpAPI, etc.</td>
   </tr>
   <tr>
     <td><b>🧠 LLMs</b><br>GPT-4, Claude, open-source LLMs</td>
