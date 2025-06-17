@@ -71,7 +71,9 @@ LangChain-Playlist/
 │   └── [Coming Soon]
 │
 ├── Tools/
-│   └── [Coming Soon]
+│   ├── Tavily_Search_Extract_Tool.ipynb
+│   ├── JSON_AgentToolkit_Tool.ipynb
+│   └── YahooFinanceNews_Stock_Tools.ipynb
 │
 ├── LLMs/
 │   └── [Coming Soon]
@@ -332,16 +334,51 @@ Essential prompt engineering components for building robust LLM applications:
   </tr>
 </table>
 
+### 🛠️ LangChain Tools
+
+Practical tool implementations for extending LLM capabilities with external APIs and services:
+
+<table>
+  <tr>
+    <td width="33%">
+      <b>Tavily Search & Extract</b><br>
+      <ul>
+        <li>Real-time web search capabilities</li>
+        <li>Content extraction and summarization</li>
+        <li>Search result filtering and ranking</li>
+        <li>API integration and response handling</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>JSON AgentToolkit</b><br>
+      <ul>
+        <li>JSON data manipulation and querying</li>
+        <li>Schema validation and transformation</li>
+        <li>Dynamic JSON processing workflows</li>
+        <li>Agent-based JSON operations</li>
+      </ul>
+    </td>
+    <td width="33%">
+      <b>Yahoo Finance News & Stock</b><br>
+      <ul>
+        <li>Real-time stock price retrieval</li>
+        <li>Financial news aggregation</li>
+        <li>Market data analysis tools</li>
+        <li>Investment research automation</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 ## 🚧 Coming Soon
 
 <table>
   <tr>
     <td><b>🔍 Retriever Chains</b><br>Multi-vector and hybrid retrievers</td>
-    <td><b⚙️ LangChain Tools</b><br>Calculator, SerpAPI, etc.</td>
+    <td><b>🧠 LLMs</b><br>GPT-4, Claude, open-source LLMs</td>
   </tr>
   <tr>
-    <td><b>🧠 LLMs</b><br>GPT-4, Claude, open-source LLMs</td>
-    <td><b>🧪 RAG Pipelines</b><br>Complete retrieval-augmented generation workflows</td>
+    <td colspan="2"><b>🧪 RAG Pipelines</b><br>Complete retrieval-augmented generation workflows</td>
   </tr>
   <tr>
     <td colspan="2"><b>🧑‍🔬 Benchmarking Tools</b><br>Embedding effectiveness, latency, chunk impact analysis</td>
