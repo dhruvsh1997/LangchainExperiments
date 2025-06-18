@@ -3,21 +3,24 @@
 ![LangChain](https://img.shields.io/badge/LangChain-Framework-green)
 ![Notebooks](https://img.shields.io/badge/Format-Colab_Notebooks-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+![Python](https://img.shields.io/badge/Python-3.8+-blue)
 
-A comprehensive collections of **hands-on Colab-style notebooks** for practical implementations and benchmarking of core LangChain components. Step through the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines.
+A comprehensive collection of **hands-on Colab-style notebooks** for practical implementations and benchmarking of core LangChain components. Master the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines through structured, modular learning.
 
-## 🧩 Repository Overview
+## 🎯 What You'll Learn
 
-This repository provides a modular journey through the Langchain ecosystem, with each component carefully isolated to allow for:
-- **Focused learning** of individual components
-- **Comparative benchmarking** across implementation options
-- **Plug-and-play solutions** for your LLM-powered applications
+This repository provides a systematic journey through the LangChain ecosystem, with each component carefully isolated to enable:
 
-## 📁 Repository Structures
+- **🎓 Focused Learning** - Master individual components without complexity
+- **⚡ Performance Benchmarking** - Compare implementations with real metrics
+- **🔧 Production-Ready Solutions** - Plug-and-play components for your applications
+- **📊 Visual Analytics** - Interactive metrics and performance comparisons
+
+## 📁 Repository Structure
 
 ```
 LangChain-Playlist/
-├── Loader and Splitters/
+├── 📄 Loader and Splitters/
 │   ├── PDF Based/
 │   │   ├── PyPDFLoader_with_SemanticChunker.ipynb
 │   │   ├── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
@@ -38,7 +41,7 @@ LangChain-Playlist/
 │   └── Markdown_Based/
 │       └── UnstructuredMarkdownLoader_with_MarkdownHeaderTextSplitter.ipynb
 │
-├── Embedding Models/
+├── 🧬 Embedding Models/
 │   ├── BASE Embedding/
 │   │   ├── all-MiniLM-L12-v2.ipynb
 │   │   ├── all-MiniLM-L6-v2.ipynb
@@ -54,7 +57,7 @@ LangChain-Playlist/
 │       ├── ms-marco-MiniLM-L-12-v2.ipynb
 │       └── tomaarsen-ModernBERT-base-gooaq-bce.ipynb
 │
-├── VectorDB's/
+├── 🧲 VectorDB's/
 │   ├── FAISS.ipynb
 │   ├── ChromaDB.ipynb
 │   ├── Weaviate.ipynb
@@ -62,357 +65,221 @@ LangChain-Playlist/
 │   ├── Pinecone.ipynb
 │   └── Redis.ipynb
 │
-├── PromptsTemplates/
+├── 📝 PromptsTemplates/
 │   ├── PromptTemplateExample.ipynb
 │   ├── ChatPromptTemplateExample.ipynb
-│   └── ChatMessagePromptTemplateExample.ipynb
-│   └── ImagePromptTemplateExample.ipynb
+│   ├── ChatMessagePromptTemplateExample.ipynb
+│   ├── ImagePromptTemplateExample.ipynb
 │   └── PipelinePromptTemplateExample.ipynb
 │
-├── Chains/
+├── 🔗 Chains/
 │   └── [Coming Soon]
 │
-├── Tools/
+├── 🛠️ Tools/
 │   ├── Tavily_Search_Extract_Tool.ipynb
 │   ├── JSON_AgentToolkit_Tool.ipynb
-│   └── YahooFinanceNews_Stock_Tools.ipynb
+│   ├── YahooFinanceNews_Stock_Tools.ipynb
+│   ├── QuipDocumentGenerator_Tool.ipynb
+│   ├── NutritionAI_CustomNutritionAI_Tool.ipynb
+│   └── CustomEmailOperations_Tool.ipynb
 │
-├── LLMs/
-│   └── [Coming Soon]
+└── 🤖 LLMs/
+    └── [Coming Soon]
 ```
 
-## 🔍 Currently Available Components
+## 🔍 Available Components
 
-### 📄 Document Loaders & Splitters
+### 📄 Document Loaders & Text Splitters
 
-Organized by document types with specialized loaders and splitters:
+Transform diverse document formats into LLM-ready chunks with specialized loaders and intelligent splitting strategies.
 
-#### PDF Based Documents
+#### PDF Processing Pipeline
 
-<table>
-  <tr>
-    <td width="33%">
-      <b>PyPDFLoader + SemanticChunker</b><br>
-      <ul>
-        <li>Semantic flow scoring</li>
-        <li>Chunk coherence metrics</li>
-        <li>Token cost efficiency</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>UnstructuredPDFLoader + RecursiveCharacterTextSplitter</b><br>
-      <ul>
-        <li>Rule-based chunking efficiency</li>
-        <li>Memory utilization analysis</li>
-        <li>Content structure preservation</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>PyMuPDFLoader + RecursiveCharacterTextSplitter</b><br>
-      <ul>
-        <li>Enhanced PDF parsing</li>
-        <li>Structure-aware chunking</li>
-        <li>Performance benchmark comparison</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| **Loader + Splitter** | **Key Features** | **Best For** |
+|------------------------|------------------|--------------|
+| **PyPDFLoader + SemanticChunker** | • Semantic coherence scoring<br>• Context-aware boundaries<br>• Token optimization | Research papers, long-form content |
+| **UnstructuredPDFLoader + RecursiveCharacterTextSplitter** | • Advanced structure detection<br>• Memory-efficient processing<br>• Content preservation | Complex layouts, mixed content |
+| **PyMuPDFLoader + RecursiveCharacterTextSplitter** | • Enhanced PDF parsing<br>• Metadata extraction<br>• Performance benchmarks | High-volume PDF processing |
 
-#### TextFile Based Documents
+#### Specialized Document Formats
 
-<table>
-  <tr>
-    <td>
-      <b>TextLoader + SemanticChunker</b><br>
-      <ul>
-        <li>Plain text document processing</li>
-        <li>Semantic boundary detection</li>
-        <li>Context-aware chunking for .txt files</li>
-        <li>Optimized for narrative and unstructured text</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### ExcelFile Based Documents
-
-<table>
-  <tr>
-    <td>
-      <b>UnstructuredExcelLoader + CharacterTextSplitter</b><br>
-      <ul>
-        <li>Excel spreadsheet data extraction (.xlsx, .xls)</li>
-        <li>Cell-based content processing</li>
-        <li>Character-level text splitting for tabular data</li>
-        <li>Handles multiple sheets and structured data formats</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### Document Based Documents
-
-<table>
-  <tr>
-    <td>
-      <b>UnstructuredWordDocumentLoader + RecursiveCharacterTextSplitter</b><br>
-      <ul>
-        <li>Microsoft Word document processing (.docx, .doc)</li>
-        <li>Rich text formatting preservation</li>
-        <li>Recursive chunking for complex document structures</li>
-        <li>Handles headers, tables, and embedded content</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### PPT Based Documents
-
-<table>
-  <tr>
-    <td>
-      <b>UnstructuredPowerPointLoader + CharacterTextSplitter</b><br>
-      <ul>
-        <li>PowerPoint presentation processing (.pptx, .ppt)</li>
-        <li>Slide-by-slide content extraction</li>
-        <li>Text and speaker notes processing</li>
-        <li>Handles titles, bullet points, and embedded objects</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### JSON Based Documents
-
-<table>
-  <tr>
-    <td>
-      <b>JSONLoader + RecursiveJsonSplitter</b><br>
-      <ul>
-        <li>JSON data structure processing</li>
-        <li>Nested object and array handling</li>
-        <li>Schema-aware recursive splitting</li>
-        <li>Preserves hierarchical relationships in data</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### HTML/URL Based Documents
-
-<table>
-  <tr>
-    <td width="50%">
-      <b>BSHTMLLoader + HTMLHeaderTextSplitter</b><br>
-      <ul>
-        <li>Web content extraction</li>
-        <li>Header-based document structuring</li>
-        <li>HTML-specific chunking strategies</li>
-      </ul>
-    </td>
-    <td width="50%">
-      <b>UnstructuredHTMLLoader + RecursiveCharacterTextSplitter</b><br>
-      <ul>
-        <li>Comprehensive HTML parsing</li>
-        <li>Content-focused extraction</li>
-        <li>Character-based recursive splitting</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### Markdown Based Documents
-
-<table>
-  <tr>
-    <td>
-      <b>UnstructuredMarkdownLoader + MarkdownHeaderTextSplitter</b><br>
-      <ul>
-        <li>Markdown document processing</li>
-        <li>Header-based hierarchical splitting</li>
-        <li>Structure-preserving chunking</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| **Document Type** | **Implementation** | **Capabilities** |
+|-------------------|-------------------|------------------|
+| **📄 Text Files** | TextLoader + SemanticChunker | Plain text processing, narrative boundaries |
+| **📊 Excel Files** | UnstructuredExcelLoader + CharacterTextSplitter | Multi-sheet processing, tabular data extraction |
+| **📝 Word Documents** | UnstructuredWordDocumentLoader + RecursiveCharacterTextSplitter | Rich formatting, embedded content handling |
+| **🎯 PowerPoint** | UnstructuredPowerPointLoader + CharacterTextSplitter | Slide extraction, speaker notes processing |
+| **🔧 JSON Data** | JSONLoader + RecursiveJsonSplitter | Schema-aware splitting, hierarchical preservation |
+| **🌐 HTML/Web** | BSHTMLLoader / UnstructuredHTMLLoader | Web scraping, content-focused extraction |
+| **📋 Markdown** | UnstructuredMarkdownLoader + MarkdownHeaderTextSplitter | Structure-preserving, header-based chunking |
 
 ### 🧬 Embedding Models
 
-Base embedding model implementations with performance comparisons:
+**Base Embedding Models** - Comprehensive performance analysis across leading embedding architectures:
 
-<table>
-  <tr>
-    <td><b>all-MiniLM-L6-v2</b></td>
-    <td><b>all-MiniLM-L12-v2</b></td>
-    <td><b>gte-multilingual-base</b></td>
-  </tr>
-  <tr>
-    <td><b>OpenAI text-embedding-3-large</b></td>
-    <td><b>GIST-Embedding-v0</b></td>
-    <td><b>cohere_embed_english_v3_0</b></td>
-  </tr>
-  <tr>
-    <td><b>all-mpnet-base-v2</b></td>
-    <td><b>multi-qa-mpnet-base-dot-v1</b></td>
-    <td><b>msmarco_distilbert_cos_v5</b></td>
-  </tr>
-</table>
+| **Model Family** | **Variants** | **Strengths** |
+|------------------|--------------|---------------|
+| **MiniLM** | L6-v2, L12-v2 | Fast inference, balanced performance |
+| **MPNet** | all-mpnet-base-v2, multi-qa-mpnet-base-dot-v1 | Superior semantic understanding |
+| **Multilingual** | gte-multilingual-base | Cross-language retrieval |
+| **Commercial** | OpenAI text-embedding-3-large, Cohere v3.0 | State-of-the-art accuracy |
+| **Specialized** | GIST-Embedding-v0, msmarco-distilbert-cos-v5 | Domain-specific optimization |
 
-**Reranker Models** for enhanced retrieval accuracy:
+**Reranker Models** - Boost retrieval precision with advanced reranking:
 
-<table>
-  <tr>
-    <td width="33%">
-      <b>ms-marco-MiniLM-L-6-v2</b><br>
-      <ul>
-        <li>Lightweight reranking model</li>
-        <li>Fast inference for production use</li>
-        <li>Optimized for passage ranking</li>
-        <li>MS MARCO trained for relevance scoring</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>ms-marco-MiniLM-L-12-v2</b><br>
-      <ul>
-        <li>Enhanced reranking capabilities</li>
-        <li>Higher accuracy vs L-6 variant</li>
-        <li>Balanced performance and speed</li>
-        <li>Advanced passage relevance scoring</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>tomaarsen-ModernBERT-base-gooaq-bce</b><br>
-      <ul>
-        <li>Modern BERT architecture</li>
-        <li>Binary cross-entropy training</li>
-        <li>GooAQ dataset optimization</li>
-        <li>State-of-the-art reranking performance</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| **Model** | **Architecture** | **Use Case** |
+|-----------|------------------|--------------|
+| **ms-marco-MiniLM-L-6-v2** | Lightweight transformer | Production environments, speed-critical |
+| **ms-marco-MiniLM-L-12-v2** | Enhanced transformer | Balanced accuracy-speed tradeoff |
+| **ModernBERT-base-gooaq-bce** | Modern BERT + BCE | Maximum accuracy, research applications |
 
 ### 🧲 Vector Databases
 
-Practical integration examples across multiple vector stores:
+Production-ready integrations with leading vector storage solutions:
 
 <div align="center">
-  <b>FAISS</b> • <b>ChromaDB</b> • <b>Weaviate</b> • <b>Qdrant</b> • <b>Pinecone</b> • <b>Redis</b>
+
+| **FAISS** | **ChromaDB** | **Weaviate** |
+|-----------|--------------|--------------|
+| **Meta's similarity search** | **Local-first vector DB** | **Production vector DB** |
+| High-performance indexing | Simple setup & deployment | GraphQL API, cloud-ready |
+
+| **Qdrant** | **Pinecone** | **Redis** |
+|------------|--------------|-----------|
+| **Open-source vector DB** | **Managed vector service** | **In-memory vector search** |
+| Self-hosted flexibility | Serverless scaling | Ultra-low latency |
+
 </div>
 
 ### 📝 Prompt Templates
 
-Essential prompt engineering components for building robust LLM applications:
+Master prompt engineering with comprehensive templating solutions:
 
-<table>
-  <tr>
-    <td width="33%">
-      <b>PromptTemplate</b><br>
-      <ul>
-        <li>Basic prompt structure and formatting</li>
-        <li>Variable substitution and templating</li>
-        <li>Input validation and formatting</li>
-        <li>Reusable prompt components</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>ChatPromptTemplate</b><br>
-      <ul>
-        <li>Multi-turn conversation handling</li>
-        <li>System, human, and AI message formatting</li>
-        <li>Chat-specific prompt engineering</li>
-        <li>Context window optimization</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>ChatMessagePromptTemplate</b><br>
-      <ul>
-        <li>Individual message template creation</li>
-        <li>Role-based message formatting</li>
-        <li>Dynamic message composition</li>
-        <li>Message chain construction</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| **Template Type** | **Purpose** | **Key Features** |
+|-------------------|-------------|------------------|
+| **PromptTemplate** | Basic text prompts | Variable substitution, input validation |
+| **ChatPromptTemplate** | Conversation handling | Multi-turn context, role management |
+| **ChatMessagePromptTemplate** | Individual messages | Role-based formatting, dynamic composition |
+| **🆕 ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
+| **🆕 PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
 
 ### 🛠️ LangChain Tools
 
-Practical tool implementations for extending LLM capabilities with external APIs and services:
+Extend LLM capabilities with powerful external integrations:
 
-<table>
-  <tr>
-    <td width="33%">
-      <b>Tavily Search & Extract</b><br>
-      <ul>
-        <li>Real-time web search capabilities</li>
-        <li>Content extraction and summarization</li>
-        <li>Search result filtering and ranking</li>
-        <li>API integration and response handling</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>JSON AgentToolkit</b><br>
-      <ul>
-        <li>JSON data manipulation and querying</li>
-        <li>Schema validation and transformation</li>
-        <li>Dynamic JSON processing workflows</li>
-        <li>Agent-based JSON operations</li>
-      </ul>
-    </td>
-    <td width="33%">
-      <b>Yahoo Finance News & Stock</b><br>
-      <ul>
-        <li>Real-time stock price retrieval</li>
-        <li>Financial news aggregation</li>
-        <li>Market data analysis tools</li>
-        <li>Investment research automation</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+#### Search & Information Tools
+| **Tool** | **Functionality** | **Use Cases** |
+|----------|-------------------|---------------|
+| **Tavily Search & Extract** | Real-time web search + content extraction | Research automation, fact-checking |
 
-## 🚧 Coming Soon
+#### Data Processing Tools
+| **Tool** | **Functionality** | **Use Cases** |
+|----------|-------------------|---------------|
+| **JSON AgentToolkit** | JSON manipulation & querying | API integration, data transformation |
+| **🆕 QuipDocumentGenerator** | Automated document creation | Report generation, content workflows |
 
-<table>
-  <tr>
-    <td><b>🔍 Retriever Chains</b><br>Multi-vector and hybrid retrievers</td>
-    <td><b>🧠 LLMs</b><br>GPT-4, Claude, open-source LLMs</td>
-  </tr>
-  <tr>
-    <td colspan="2"><b>🧪 RAG Pipelines</b><br>Complete retrieval-augmented generation workflows</td>
-  </tr>
-  <tr>
-    <td colspan="2"><b>🧑‍🔬 Benchmarking Tools</b><br>Embedding effectiveness, latency, chunk impact analysis</td>
-  </tr>
-</table>
+#### Financial & Market Tools
+| **Tool** | **Functionality** | **Use Cases** |
+|----------|-------------------|---------------|
+| **Yahoo Finance News & Stock** | Market data & financial news | Investment research, market analysis |
 
-## 💻 How to Use
+#### Specialized AI Tools
+| **Tool** | **Functionality** | **Use Cases** |
+|----------|-------------------|---------------|
+| **🆕 NutritionAI & CustomNutritionAI** | Nutritional analysis & recommendations | Health apps, dietary planning |
+| **🆕 CustomEmailOperations** | Email automation & processing | Communication workflows, CRM integration |
 
-Each notebook follows a **Colab-friendly format** with:
+## 🚀 Getting Started
 
-1. **Clear explanations** of concepts and implementation details
-2. **Interactive parameters** you can modify to test different configurations
-3. **Visual metrics** and performance comparisons
-4. **Self-contained examples** that work with minimal setup
+### Prerequisites
+```bash
+pip install langchain langchain-community langchain-openai
+pip install faiss-cpu chromadb sentence-transformers
+```
 
-> Perfect for researchers, engineers, and students exploring LLM applications with LangChain.
+### Quick Start
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/LangChain-Playlist.git
+   cd LangChain-Playlist
+   ```
 
-## 🤝 Contribute
+2. **Open any notebook in Google Colab**
+   - Each notebook contains installation commands
+   - All examples are self-contained
+   - Interactive parameters for experimentation
 
-Contributions are welcome in many forms:
+3. **Start with the basics**
+   - Begin with `Loader and Splitters/` for document processing
+   - Move to `Embedding Models/` for vector representations
+   - Explore `VectorDB's/` for storage solutions
 
-- ⭐ Star this repo to show support
-- 🐛 Open issues for bugs or clarifications
-- 💡 Suggest improvements or new component
-- 🧪 Submit PRs for new implementations
+## 📊 Notebook Features
+
+Each notebook includes:
+
+- **🎯 Clear Learning Objectives** - What you'll accomplish
+- **📚 Concept Explanations** - Theory behind implementations  
+- **⚙️ Interactive Parameters** - Modify and experiment easily
+- **📈 Performance Metrics** - Visual comparisons and benchmarks
+- **🔍 Troubleshooting Guides** - Common issues and solutions
+- **💡 Best Practices** - Production deployment tips
+
+## 🔄 Upcoming Features
+
+| **Category** | **Components** | **ETA** |
+|--------------|----------------|---------|
+| **🔍 Retrievers** | Multi-vector, hybrid, contextual retrievers | Q2 2024 |
+| **🤖 LLM Integration** | GPT-4, Claude, Llama, Gemini implementations | Q2 2024 |
+| **🧪 RAG Pipelines** | End-to-end retrieval-augmented generation | Q3 2024 |
+| **📊 Benchmarking Suite** | Automated performance testing & comparison | Q3 2024 |
+| **🔧 Agent Frameworks** | Multi-agent systems, tool routing | Q4 2024 |
+
+## 🤝 Contributing
+
+We welcome contributions from the community!
+
+### Ways to Contribute
+- **⭐ Star this repository** to show support
+- **🐛 Report bugs** or request clarifications
+- **💡 Suggest new components** or improvements
+- **📝 Submit pull requests** with new implementations
+- **📚 Improve documentation** and examples
+
+### Contribution Guidelines
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Follow the existing notebook structure and naming conventions
+4. Include comprehensive documentation and examples
+5. Test your implementation thoroughly
+6. Submit a pull request with detailed description
 
 ## 📜 License
 
-This repository is licensed under the **MIT License**.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **LangChain Team** for the incredible framework
+- **Open Source Community** for embedding models and vector databases
+- **Contributors** who help improve this resource
+
+## 📞 Support
+
+- **📖 Documentation**: Check individual notebook READMEs
+- **💬 Discussions**: Use GitHub Discussions for questions
+- **🐛 Issues**: Report bugs via GitHub Issues
+- **📧 Contact**: Open an issue for direct communication
 
 ---
 
 <div align="center">
-  <i>Built with ❤️ for the LangChain community</i>
+  
+**⚡ Ready to master LangChain? Start with any notebook and build your LLM expertise step by step! ⚡**
+
+*Built with ❤️ for the LangChain community*
+
+[![GitHub stars](https://img.shields.io/github/stars/dhruvsh1997/LangchainExperiments?style=social)](https://github.com/dhruvsh1997/LangchainExperiments)
+[![GitHub forks](https://img.shields.io/github/forks/dhruvsh1997/LangchainExperiments?style=social)](https://github.com/dhruvsh1997/LangchainExperiments)
+
 </div>
