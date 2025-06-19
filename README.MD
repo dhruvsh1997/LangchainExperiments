@@ -55,7 +55,10 @@ LangChain-Playlist/
 │   └── RERANKER Models/
 │       ├── ms-marco-MiniLM-L-6-v2.ipynb
 │       ├── ms-marco-MiniLM-L-12-v2.ipynb
-│       └── tomaarsen-ModernBERT-base-gooaq-bce.ipynb
+│       ├── tomaarsen-ModernBERT-base-gooaq-bce.ipynb
+│       ├── quora-distilroberta-base.ipynb
+│       ├── stsb-roberta-large.ipynb
+│       └── qnli-electra-base.ipynb
 │
 ├── 🧲 VectorDB's/
 │   ├── FAISS.ipynb
@@ -132,6 +135,9 @@ Transform diverse document formats into LLM-ready chunks with specialized loader
 | **ms-marco-MiniLM-L-6-v2** | Lightweight transformer | Production environments, speed-critical |
 | **ms-marco-MiniLM-L-12-v2** | Enhanced transformer | Balanced accuracy-speed tradeoff |
 | **ModernBERT-base-gooaq-bce** | Modern BERT + BCE | Maximum accuracy, research applications |
+| **🆕 quora-distilroberta-base** | DistilRoBERTa architecture | Question similarity, community Q&A |
+| **🆕 stsb-roberta-large** | Large RoBERTa model | Semantic textual similarity tasks |
+| **🆕 qnli-electra-base** | ELECTRA-based model | Natural language inference, Q&A |
 
 ### 🧲 Vector Databases
 
