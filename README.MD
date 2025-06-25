@@ -75,6 +75,11 @@ LangChain-Playlist/
 │   ├── ImagePromptTemplateExample.ipynb
 │   └── PipelinePromptTemplateExample.ipynb
 │
+├── 🔍 Retrievers/
+│   ├── VectorStoreRetrieverMMR-InsideRAG.ipynb
+│   ├── ParentDocumentRetriever-InsideRAG.ipynb
+│   └── MultiVectorRetriever-InsideRAG.ipynb
+│
 ├── 🔗 Chains/
 │   └── [Coming Soon]
 │
@@ -157,6 +162,23 @@ Production-ready integrations with leading vector storage solutions:
 
 </div>
 
+### 🔍 Retrievers
+
+Advanced retrieval strategies for sophisticated RAG implementations with comprehensive end-to-end examples:
+
+| **Retriever Type** | **Implementation** | **Key Features** | **Best For** |
+|-------------------|-------------------|------------------|--------------|
+| **VectorStoreRetrieverMMR** | Maximum Marginal Relevance in RAG | • Diversity optimization<br>• Relevance-diversity balance<br>• Complete RAG pipeline integration | Avoiding redundant results, diverse content retrieval |
+| **ParentDocumentRetriever** | Hierarchical document retrieval in RAG | • Parent-child document relationships<br>• Context preservation<br>• Full RAG workflow demonstration | Long documents, maintaining context while chunking |
+| **MultiVectorRetriever** | Multiple vector representation in RAG | • Multiple embedding strategies<br>• Enhanced retrieval accuracy<br>• End-to-end RAG implementation | Complex documents, multi-aspect retrieval |
+
+Each retriever notebook includes:
+- **🔄 Complete RAG Pipeline** - From document loading to final answer generation
+- **📊 Performance Metrics** - Retrieval quality and response evaluation
+- **⚙️ Configurable Parameters** - Fine-tune retrieval strategies
+- **🎯 Real-world Examples** - Practical use cases and implementations
+- **📈 Comparative Analysis** - Benchmarking against baseline retrievers
+
 ### 📝 Prompt Templates
 
 Master prompt engineering with comprehensive templating solutions:
@@ -218,7 +240,8 @@ pip install faiss-cpu chromadb sentence-transformers
 3. **Start with the basics**
    - Begin with `Loader and Splitters/` for document processing
    - Move to `Embedding Models/` for vector representations
-   - Explore `VectorDB's/` for storage solutions
+   - Progress to `VectorDB's/` for storage solutions
+   - Explore `Retrievers/` for advanced retrieval strategies
 
 ## 📊 Notebook Features
 
@@ -235,9 +258,8 @@ Each notebook includes:
 
 | **Category** | **Components** | **ETA** |
 |--------------|----------------|---------|
-| **🔍 Retrievers** | Multi-vector, hybrid, contextual retrievers | Q2 2024 |
 | **🤖 LLM Integration** | GPT-4, Claude, Llama, Gemini implementations | Q2 2024 |
-| **🧪 RAG Pipelines** | End-to-end retrieval-augmented generation | Q3 2024 |
+| **🧪 Advanced RAG Pipelines** | Multi-agent RAG, conditional retrieval, hybrid approaches | Q3 2024 |
 | **📊 Benchmarking Suite** | Automated performance testing & comparison | Q3 2024 |
 | **🔧 Agent Frameworks** | Multi-agent systems, tool routing | Q4 2024 |
 
