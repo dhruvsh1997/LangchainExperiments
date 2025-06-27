@@ -80,6 +80,11 @@ LangChain-Playlist/
 │   ├── ParentDocumentRetriever-InsideRAG.ipynb
 │   └── MultiVectorRetriever-InsideRAG.ipynb
 │
+├── 🧠 Memory (Langchain 0.1)/
+│   ├── CombinedMemoryExample.ipynb
+│   ├── ConversationBufferMemoryExample.ipynb
+│   └── MessagesPlaceholderWithMemoryExample.ipynb
+│
 ├── 🔗 Chains/
 │   └── [Coming Soon]
 │
@@ -179,6 +184,25 @@ Each retriever notebook includes:
 - **🎯 Real-world Examples** - Practical use cases and implementations
 - **📈 Comparative Analysis** - Benchmarking against baseline retrievers
 
+### 🧠 Memory Systems (LangChain 0.1)
+
+Implement conversation memory and context management for stateful LLM applications:
+
+| **Memory Type** | **Implementation** | **Key Features** | **Best For** |
+|-----------------|-------------------|------------------|--------------|
+| **ConversationBufferMemory** | Basic conversation history storage | • Simple message buffering<br>• Automatic conversation tracking<br>• Memory size management | Chatbots, basic conversational AI |
+| **CombinedMemory** | Multiple memory types integration | • Multi-modal memory combination<br>• Flexible memory strategies<br>• Advanced context preservation | Complex applications, multi-context scenarios |
+| **MessagesPlaceholderWithMemory** | Template-based memory integration | • Prompt template integration<br>• Dynamic message insertion<br>• Structured conversation flow | Structured dialogues, guided conversations |
+
+**Memory Features:**
+- **💬 Conversation Continuity** - Maintain context across multiple interactions
+- **🔄 State Management** - Persistent conversation state handling
+- **⚙️ Configurable Retention** - Control memory size and retention policies
+- **📝 Message Formatting** - Structured conversation history management
+- **🎯 Template Integration** - Seamless integration with prompt templates
+
+*Note: These implementations use LangChain 0.1 memory patterns for backward compatibility and established workflows.*
+
 ### 📝 Prompt Templates
 
 Master prompt engineering with comprehensive templating solutions:
@@ -242,6 +266,7 @@ pip install faiss-cpu chromadb sentence-transformers
    - Move to `Embedding Models/` for vector representations
    - Progress to `VectorDB's/` for storage solutions
    - Explore `Retrievers/` for advanced retrieval strategies
+   - Learn `Memory (Langchain 0.1)/` for conversation state management
 
 ## 📊 Notebook Features
 
