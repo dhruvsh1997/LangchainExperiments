@@ -83,7 +83,10 @@ LangChain-Playlist/
 ├── 🧠 Memory (Langchain 0.1)/
 │   ├── CombinedMemoryExample.ipynb
 │   ├── ConversationBufferMemoryExample.ipynb
-│   └── MessagesPlaceholderWithMemoryExample.ipynb
+│   ├── MessagesPlaceholderWithMemoryExample.ipynb
+│   ├── ConversationSummaryMemoryExample.ipynb
+│   ├── VectorStoreRetrieverMemoryExample.ipynb
+│   └── SimpleMemory_with_RunnableWithMessageHistory.ipynb
 │
 ├── 🔗 Chains/
 │   └── [Coming Soon]
@@ -186,22 +189,41 @@ Each retriever notebook includes:
 
 ### 🧠 Memory Systems (LangChain 0.1)
 
-Implement conversation memory and context management for stateful LLM applications:
+Implement sophisticated conversation memory and context management for stateful LLM applications with comprehensive memory strategies:
+
+#### Core Memory Types
 
 | **Memory Type** | **Implementation** | **Key Features** | **Best For** |
 |-----------------|-------------------|------------------|--------------|
 | **ConversationBufferMemory** | Basic conversation history storage | • Simple message buffering<br>• Automatic conversation tracking<br>• Memory size management | Chatbots, basic conversational AI |
+| **ConversationSummaryMemory** | Intelligent conversation summarization | • Automatic conversation summarization<br>• Token-efficient storage<br>• Context compression | Long conversations, token optimization |
 | **CombinedMemory** | Multiple memory types integration | • Multi-modal memory combination<br>• Flexible memory strategies<br>• Advanced context preservation | Complex applications, multi-context scenarios |
+
+#### Advanced Memory Integration
+
+| **Memory Type** | **Implementation** | **Key Features** | **Best For** |
+|-----------------|-------------------|------------------|--------------|
+| **VectorStoreRetrieverMemory** | Vector-based memory retrieval | • Semantic memory search<br>• Long-term context storage<br>• Similarity-based recall | Knowledge-intensive applications, semantic search |
 | **MessagesPlaceholderWithMemory** | Template-based memory integration | • Prompt template integration<br>• Dynamic message insertion<br>• Structured conversation flow | Structured dialogues, guided conversations |
+| **SimpleMemory with RunnableWithMessageHistory** | Modern LangChain memory patterns | • Runnable-based architecture<br>• Session management<br>• Streamlined memory handling | Production applications, modern LangChain workflows |
 
-**Memory Features:**
-- **💬 Conversation Continuity** - Maintain context across multiple interactions
-- **🔄 State Management** - Persistent conversation state handling
-- **⚙️ Configurable Retention** - Control memory size and retention policies
-- **📝 Message Formatting** - Structured conversation history management
-- **🎯 Template Integration** - Seamless integration with prompt templates
+**Comprehensive Memory Features:**
+- **💬 Conversation Continuity** - Maintain context across multiple interactions with various retention strategies
+- **🔄 State Management** - Persistent conversation state handling with session support
+- **⚙️ Configurable Retention** - Control memory size, summarization, and retention policies
+- **📝 Message Formatting** - Structured conversation history management and template integration
+- **🎯 Semantic Recall** - Vector-based memory search for intelligent context retrieval
+- **📊 Memory Optimization** - Token-efficient storage through summarization and compression
+- **🔗 Modern Integration** - Compatible with latest LangChain patterns and runnable architectures
 
-*Note: These implementations use LangChain 0.1 memory patterns for backward compatibility and established workflows.*
+**Memory Strategy Comparison:**
+- **Buffer Memory**: Best for short conversations requiring full history
+- **Summary Memory**: Ideal for long conversations needing context compression
+- **Vector Memory**: Perfect for knowledge-intensive apps requiring semantic search
+- **Combined Memory**: Optimal for complex scenarios requiring multiple memory types
+- **Runnable Memory**: Recommended for modern production applications
+
+*Note: These implementations use LangChain 0.1 memory patterns for backward compatibility and established workflows, with examples ranging from basic buffer storage to advanced vector-based semantic memory.*
 
 ### 📝 Prompt Templates
 
@@ -212,8 +234,8 @@ Master prompt engineering with comprehensive templating solutions:
 | **PromptTemplate** | Basic text prompts | Variable substitution, input validation |
 | **ChatPromptTemplate** | Conversation handling | Multi-turn context, role management |
 | **ChatMessagePromptTemplate** | Individual messages | Role-based formatting, dynamic composition |
-| **🆕 ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
-| **🆕 PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
+| **ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
+| **PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
 
 ### 🛠️ LangChain Tools
 
