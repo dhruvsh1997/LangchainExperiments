@@ -88,6 +88,10 @@ LangChain-Playlist/
 │   ├── VectorStoreRetrieverMemoryExample.ipynb
 │   └── SimpleMemory_with_RunnableWithMessageHistory.ipynb
 │
+├── 🔗 Runnable (0.3)/
+│   ├── Runnable-Based-RAG-Pipeline.ipynb
+│   └── Runnable_for_LLM_PipelineWithMessageHistory.ipynb
+│
 ├── 🔗 Chains/
 │   └── [Coming Soon]
 │
@@ -225,6 +229,141 @@ Implement sophisticated conversation memory and context management for stateful 
 
 *Note: These implementations use LangChain 0.1 memory patterns for backward compatibility and established workflows, with examples ranging from basic buffer storage to advanced vector-based semantic memory.*
 
+### 🔗 Runnable Architecture (LangChain 0.3)
+
+Master the modern **Runnable** paradigm - LangChain's revolutionary approach to building composable, type-safe, and highly performant LLM applications through functional programming principles.
+
+#### 🎯 What are Runnables?
+
+**Runnables** represent LangChain's next-generation architecture that treats every component as a composable, functional unit. Think of them as intelligent building blocks that can be seamlessly connected, parallelized, and orchestrated to create sophisticated AI workflows.
+
+#### 🏗️ Runnable Architecture Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           RUNNABLE ECOSYSTEM                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Input Data ──► [Runnable A] ──► [Runnable B] ──► [Runnable C] ──► Output   │
+│       │              │              │              │                       │
+│       │              ▼              ▼              ▼                       │
+│       │         [Parallel      [Conditional   [Memory                     │
+│       │          Execution]     Routing]      Integration]                 │
+│       │              │              │              │                       │
+│       │              ▼              ▼              ▼                       │
+│       └────────► [Error Handling & Monitoring] ◄───┘                       │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                        CORE RUNNABLE FEATURES                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ 🔄 COMPOSABILITY    │ 🚀 ASYNC SUPPORT   │ 🎯 TYPE SAFETY                  │
+│ Chain components    │ Non-blocking ops   │ Runtime validation              │
+│ seamlessly          │ & parallel exec    │ & error prevention              │
+│                     │                    │                                 │
+│ 📊 STREAMING        │ 🔍 OBSERVABILITY   │ ⚡ PERFORMANCE                  │
+│ Real-time output    │ Built-in logging   │ Optimized execution             │
+│ & progressive resp  │ & monitoring       │ & resource mgmt                 │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 🚀 Runnable Pipeline Patterns
+
+```
+📋 SEQUENTIAL PIPELINE (Linear Execution)
+┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+│ Document │──► │ Embedder │──► │ Retriever│──► │   LLM    │
+│ Loader   │    │          │    │          │    │ Response │
+└──────────┘    └──────────┘    └──────────┘    └──────────┘
+
+🔀 PARALLEL PIPELINE (Concurrent Execution)
+┌──────────┐    ┌──────────┐
+│ Vector   │──► │          │
+│ Search   │    │ Response │
+└──────────┘ ┌─►│ Merger   │──► Final Output
+┌──────────┐ │  │          │
+│ Keyword  │─┘  │          │
+│ Search   │    └──────────┘
+└──────────┘
+
+🧠 MEMORY-ENHANCED PIPELINE (Stateful Execution)
+┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+│   User   │──► │ Message  │──► │   LLM    │──► │ Response │
+│  Input   │    │ History  │    │Pipeline  │    │+ Memory  │
+└──────────┘    └──────────┘    └──────────┘    └──────────┘
+                      ▲                              │
+                      └──────────────────────────────┘
+                           Memory Update Loop
+```
+
+#### 🎛️ Available Runnable Implementations
+
+| **Runnable Type** | **Implementation** | **Key Features** | **Architecture Benefits** |
+|-------------------|-------------------|------------------|---------------------------|
+| **Runnable-Based RAG Pipeline** | Complete RAG workflow using Runnable architecture | • Modular component design<br>• Type-safe data flow<br>• Async/streaming support<br>• Error handling & monitoring | • Composable components<br>• Easy testing & debugging<br>• Performance optimization<br>• Scalable architecture |
+| **Runnable LLM Pipeline with MessageHistory** | Conversational LLM with persistent memory | • Stateful conversation management<br>• Message history integration<br>• Session-based memory<br>• Streaming responses | • Memory state isolation<br>• Concurrent session handling<br>• Efficient context management<br>• Production-ready patterns |
+
+#### 🔧 Runnable Core Concepts
+
+**🎯 Composability**
+```python
+# Traditional Approach (Complex & Rigid)
+chain = LLMChain(llm=llm, prompt=prompt)
+result = chain.run(input_data)
+
+# Runnable Approach (Simple & Flexible)
+pipeline = prompt | llm | output_parser
+result = pipeline.invoke(input_data)
+```
+
+**⚡ Streaming & Async**
+```python
+# Real-time streaming responses
+async for chunk in pipeline.astream(input_data):
+    print(chunk, end="")
+
+# Batch processing with parallelization
+results = await pipeline.abatch([input1, input2, input3])
+```
+
+**🔄 Error Handling & Retry**
+```python
+# Built-in error handling with fallbacks
+pipeline_with_fallback = primary_pipeline.with_fallbacks([
+    fallback_pipeline_1,
+    fallback_pipeline_2
+])
+```
+
+#### 📊 Runnable Advantages Over Traditional Chains
+
+| **Aspect** | **Traditional Chains** | **Runnable Architecture** |
+|------------|------------------------|---------------------------|
+| **Composition** | Complex inheritance patterns | Simple pipe operators (`|`) |
+| **Type Safety** | Runtime errors common | Compile-time validation |
+| **Performance** | Sequential execution | Parallel & async support |
+| **Debugging** | Black box behavior | Transparent data flow |
+| **Testing** | Difficult to unit test | Easy component isolation |
+| **Streaming** | Limited support | Native streaming capabilities |
+| **Memory Management** | Manual state handling | Built-in session management |
+| **Error Handling** | Custom implementations | Standardized patterns |
+
+#### 🎓 Learning Path for Runnables
+
+1. **Start with Runnable-Based RAG Pipeline** - Understand core concepts and composition patterns
+2. **Explore MessageHistory Integration** - Learn stateful applications and memory management
+3. **Practice Async & Streaming** - Master performance optimization techniques
+4. **Build Custom Runnables** - Create your own composable components
+
+**🔮 Why Runnables Matter:**
+- **Future-Proof Architecture** - Built for LangChain's long-term vision
+- **Industry Standards** - Following functional programming best practices
+- **Production Ready** - Designed for enterprise-scale applications
+- **Developer Experience** - Simplified debugging and maintenance
+
+*Note: Runnable architecture represents LangChain 0.3+ paradigms and is the recommended approach for new applications, offering superior performance, maintainability, and developer experience.*
+
 ### 📝 Prompt Templates
 
 Master prompt engineering with comprehensive templating solutions:
@@ -234,8 +373,8 @@ Master prompt engineering with comprehensive templating solutions:
 | **PromptTemplate** | Basic text prompts | Variable substitution, input validation |
 | **ChatPromptTemplate** | Conversation handling | Multi-turn context, role management |
 | **ChatMessagePromptTemplate** | Individual messages | Role-based formatting, dynamic composition |
-| **ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
-| **PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
+| **🆕 ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
+| **🆕 PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
 
 ### 🛠️ LangChain Tools
 
@@ -289,6 +428,7 @@ pip install faiss-cpu chromadb sentence-transformers
    - Progress to `VectorDB's/` for storage solutions
    - Explore `Retrievers/` for advanced retrieval strategies
    - Learn `Memory (Langchain 0.1)/` for conversation state management
+   - Master `Runnable (0.3)/` for modern LangChain architecture patterns
 
 ## 📊 Notebook Features
 
