@@ -75,6 +75,11 @@ LangChain-Playlist/
 │   ├── ImagePromptTemplateExample.ipynb
 │   └── PipelinePromptTemplateExample.ipynb
 │
+├── 🔧 Output Parsers/
+│   ├── OutputParser_StrOutputParser.ipynb
+│   ├── OutputParser_JSONOutputParser.ipynb
+│   └── OutputParser_XMLOutputParser.ipynb
+│
 ├── 🔍 Retrievers/
 │   ├── VectorStoreRetrieverMMR-InsideRAG.ipynb
 │   ├── ParentDocumentRetriever-InsideRAG.ipynb
@@ -173,6 +178,165 @@ Production-ready integrations with leading vector storage solutions:
 | Self-hosted flexibility | Serverless scaling | Ultra-low latency |
 
 </div>
+
+### 📝 Prompt Templates
+
+Master prompt engineering with comprehensive templating solutions:
+
+| **Template Type** | **Purpose** | **Key Features** |
+|-------------------|-------------|------------------|
+| **PromptTemplate** | Basic text prompts | Variable substitution, input validation |
+| **ChatPromptTemplate** | Conversation handling | Multi-turn context, role management |
+| **ChatMessagePromptTemplate** | Individual messages | Role-based formatting, dynamic composition |
+| **🆕 ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
+| **🆕 PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
+
+### 🔧 Output Parsers
+
+Transform raw LLM outputs into structured, usable formats with comprehensive parsing strategies designed for production reliability and type safety.
+
+#### 🎯 Why Output Parsers Matter
+
+Raw LLM outputs are often unstructured strings that need transformation into specific formats for downstream applications. Output parsers bridge this gap by providing:
+
+- **🔒 Type Safety** - Guaranteed output formats with validation
+- **📊 Structured Data** - Convert text to JSON, XML, or custom formats
+- **🛡️ Error Handling** - Robust parsing with fallback mechanisms
+- **🔄 Consistency** - Standardized output formats across different LLMs
+- **⚡ Performance** - Optimized parsing for production workflows
+
+#### 🎨 Parser Architecture Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           OUTPUT PARSER PIPELINE                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  Raw LLM Output ──► [Parser] ──► [Validation] ──► [Transformation] ──► Result│
+│         │              │            │                  │                    │
+│         │              ▼            ▼                  ▼                    │
+│         │         [Format       [Schema            [Type                   │
+│         │          Detection]    Validation]       Casting]                │
+│         │              │            │                  │                    │
+│         │              ▼            ▼                  ▼                    │
+│         └────────► [Error Recovery & Retry Logic] ◄────┘                    │
+│                                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                        PARSER TYPES & USE CASES                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ 📝 STRING PARSER    │ 🔧 JSON PARSER     │ 📋 XML PARSER                   │
+│ Clean & format text │ Structured data    │ Hierarchical data               │
+│ Remove artifacts    │ API responses      │ Configuration files             │
+│ Standardize output  │ Database records   │ Markup processing               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 🔧 Available Parser Implementations
+
+| **Parser Type** | **Implementation** | **Key Features** | **Best For** |
+|-----------------|-------------------|------------------|--------------|
+| **StrOutputParser** | String processing & cleanup | • Text normalization<br>• Whitespace handling<br>• Encoding standardization<br>• Content filtering | • Simple text responses<br>• Content summarization<br>• Text classification tasks<br>• Basic Q&A systems |
+| **JSONOutputParser** | JSON structure parsing | • Schema validation<br>• Type enforcement<br>• Nested object handling<br>• Error recovery | • API integrations<br>• Structured data extraction<br>• Database operations<br>• Complex data workflows |
+| **XMLOutputParser** | XML document parsing | • Hierarchical data extraction<br>• Namespace support<br>• Attribute parsing<br>• Document validation | • Configuration management<br>• Markup processing<br>• Legacy system integration<br>• Structured document workflows |
+
+#### 🎯 Parser Use Cases & Examples
+
+**📝 String Parser Applications**
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         STRING PARSER SCENARIOS                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ 💬 CHAT RESPONSES     │ 📄 CONTENT GENERATION │ 🎯 CLASSIFICATION           │
+│ Clean conversational │ Article & blog writing │ Sentiment analysis          │
+│ text for display     │ Social media content   │ Category assignment         │
+│                      │                        │                             │
+│ 🔍 SEARCH QUERIES     │ 📊 REPORT GENERATION   │ 🌐 TRANSLATION              │
+│ Query preprocessing  │ Executive summaries    │ Language conversion         │
+│ Intent extraction    │ Technical documentation│ Localization workflows      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**🔧 JSON Parser Applications**
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          JSON PARSER SCENARIOS                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ 🌐 API RESPONSES      │ 📊 DATA EXTRACTION     │ 🔗 INTEGRATION              │
+│ REST API integration │ Entity recognition     │ Webhook processing          │
+│ Service orchestration│ Structured information │ Multi-system workflows      │
+│                      │                        │                             │
+│ 📋 FORM PROCESSING    │ 🎯 DECISION TREES      │ 📈 ANALYTICS                │
+│ User input validation│ Logic flow execution   │ Metrics collection          │
+│ Dynamic form creation│ Conditional processing │ Performance tracking        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**📋 XML Parser Applications**
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          XML PARSER SCENARIOS                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ ⚙️ CONFIGURATION      │ 📄 DOCUMENT PROCESSING │ 🔄 DATA TRANSFORMATION     │
+│ Settings management  │ Rich text formatting   │ Format conversion           │
+│ Environment configs  │ Markup preservation    │ Legacy system migration     │
+│                      │                        │                             │
+│ 🌐 WEB SCRAPING       │ 📊 REPORT GENERATION   │ 🗂️ METADATA EXTRACTION      │
+│ HTML content parsing │ Structured reporting   │ Document properties         │
+│ Data extraction      │ Template processing    │ Content cataloging          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 🚀 Advanced Parser Features
+
+**🛡️ Error Handling & Recovery**
+- **Graceful Degradation** - Fallback to simpler parsing when complex parsing fails
+- **Schema Validation** - Ensure outputs match expected formats before processing
+- **Retry Logic** - Automatically retry parsing with different strategies
+- **Error Logging** - Comprehensive error tracking and debugging information
+
+**⚡ Performance Optimization**
+- **Lazy Loading** - Parse only required portions of large outputs
+- **Caching** - Store parsed results for repeated processing
+- **Streaming** - Process large outputs in chunks for memory efficiency
+- **Parallel Processing** - Handle multiple parsing tasks concurrently
+
+**🔧 Customization Options**
+- **Custom Validators** - Define application-specific validation rules
+- **Format Converters** - Transform between different output formats
+- **Template Matching** - Pattern-based parsing for consistent structures
+- **Dynamic Schemas** - Adapt parsing rules based on content analysis
+
+#### 📊 Parser Performance Comparison
+
+| **Parser Type** | **Speed** | **Memory Usage** | **Error Recovery** | **Complexity** |
+|-----------------|-----------|------------------|--------------------|-----------------|
+| **StrOutputParser** | ⚡⚡⚡ | 🟢 Low | 🟡 Basic | 🟢 Simple |
+| **JSONOutputParser** | ⚡⚡ | 🟡 Medium | 🟢 Advanced | 🟡 Medium |
+| **XMLOutputParser** | ⚡ | 🔴 High | 🟢 Advanced | 🔴 Complex |
+
+#### 🎓 Learning Path for Output Parsers
+
+1. **Start with StrOutputParser** - Learn basic text processing and cleanup techniques
+2. **Master JSONOutputParser** - Understand structured data extraction and validation
+3. **Explore XMLOutputParser** - Handle hierarchical data and complex markup
+4. **Combine Parsers** - Create parser chains for multi-format processing
+5. **Custom Parsers** - Build domain-specific parsing solutions
+
+**🔮 Production Benefits:**
+- **Reliability** - Consistent output formats reduce downstream errors
+- **Maintainability** - Centralized parsing logic simplifies updates
+- **Scalability** - Optimized parsers handle high-volume processing
+- **Integration** - Seamless connection with existing data pipelines
+
+*Note: Output parsers are essential for production LLM applications, providing the bridge between raw AI outputs and structured application data. Each parser type is optimized for specific use cases and output formats.*
 
 ### 🔍 Retrievers
 
@@ -364,18 +528,6 @@ pipeline_with_fallback = primary_pipeline.with_fallbacks([
 
 *Note: Runnable architecture represents LangChain 0.3+ paradigms and is the recommended approach for new applications, offering superior performance, maintainability, and developer experience.*
 
-### 📝 Prompt Templates
-
-Master prompt engineering with comprehensive templating solutions:
-
-| **Template Type** | **Purpose** | **Key Features** |
-|-------------------|-------------|------------------|
-| **PromptTemplate** | Basic text prompts | Variable substitution, input validation |
-| **ChatPromptTemplate** | Conversation handling | Multi-turn context, role management |
-| **ChatMessagePromptTemplate** | Individual messages | Role-based formatting, dynamic composition |
-| **🆕 ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
-| **🆕 PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
-
 ### 🛠️ LangChain Tools
 
 Extend LLM capabilities with powerful external integrations:
@@ -426,6 +578,8 @@ pip install faiss-cpu chromadb sentence-transformers
    - Begin with `Loader and Splitters/` for document processing
    - Move to `Embedding Models/` for vector representations
    - Progress to `VectorDB's/` for storage solutions
+   - Master `PromptsTemplates/` for prompt engineering
+   - **NEW: Explore `Output Parsers/` for structured output handling**
    - Explore `Retrievers/` for advanced retrieval strategies
    - Learn `Memory (Langchain 0.1)/` for conversation state management
    - Master `Runnable (0.3)/` for modern LangChain architecture patterns
