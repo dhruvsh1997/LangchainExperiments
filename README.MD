@@ -144,11 +144,21 @@ Transform diverse document formats into LLM-ready chunks with specialized loader
 
 | **Model Family** | **Variants** | **Strengths** |
 |------------------|--------------|---------------|
-| **MiniLM** | L6-v2, L12-v2 | Fast inference, balanced performance |
+| **MiniLM** | L6-v2, LAgainst-v2 | Fast inference, balanced performance |
 | **MPNet** | all-mpnet-base-v2, multi-qa-mpnet-base-dot-v1 | Superior semantic understanding |
 | **Multilingual** | gte-multilingual-base | Cross-language retrieval |
 | **Commercial** | OpenAI text-embedding-3-large, Cohere v3.0 | State-of-the-art accuracy |
 | **Specialized** | GIST-Embedding-v0, msmarco-distilbert-cos-v5 | Domain-specific optimization |
+
+**Performance Metrics for Embedding Models**:
+
+| **Metric** | **Purpose** | **Calculation Formula** |
+|------------|-------------|-------------------------|
+| **MRR (Mean Reciprocal Rank)** | Measures ranking quality by prioritizing the first relevant result | `MRR = (1/Q) * Σ(1/rank_i)`, where `Q` is number of queries, `rank_i` is position of first relevant result for query `i` |
+| **MAP (Mean Average Precision)** | Evaluates precision across all relevant results | `MAP = (1/Q) * Σ(AP_q)`, where `AP_q = Σ(Precision@k * rel(k)) / # relevant docs`, `rel(k)` is 1 if item at rank `k` is relevant, else 0 |
+| **NDCG (Normalized Discounted Cumulative Gain)** | Assesses ranking quality with graded relevance, emphasizing higher ranks | `NDCG = DCG / IDCG`, where `DCG = Σ((2^rel_i - 1) / log2(i+1))`, `IDCG` is ideal DCG |
+| **Top-1 Accuracy** | Measures if the top result is relevant | `Accuracy = (# correct top-1 predictions) / (# queries)` |
+| **Average Spearman** | Evaluates correlation between predicted and true rankings | `Spearman = 1 - (6 * Σd_i^2) / (n * (n^2 - 1))`, where `d_i` is difference in ranks, `n` is number of items |
 
 **Reranker Models** - Boost retrieval precision with advanced reranking:
 
@@ -181,7 +191,7 @@ Production-ready integrations with leading vector storage solutions:
 
 ### 📝 Prompt Templates
 
-Master prompt engineering with comprehensive templating solutions:
+Master prompt engineering with comprehensive templating solutions, now evaluated with performance metrics for effectiveness.
 
 | **Template Type** | **Purpose** | **Key Features** |
 |-------------------|-------------|------------------|
@@ -190,6 +200,16 @@ Master prompt engineering with comprehensive templating solutions:
 | **ChatMessagePromptTemplate** | Individual messages | Role-based formatting, dynamic composition |
 | **🆕 ImagePromptTemplate** | Vision model prompts | Image + text prompting, multimodal workflows |
 | **🆕 PipelinePromptTemplate** | Complex prompt chains | Multi-stage processing, prompt composition |
+
+**Performance Metrics for Prompt Templates**:
+
+| **Metric** | **Purpose** | **Calculation Formula** |
+|------------|-------------|-------------------------|
+| **Exact Match (EM)** | Measures if the model's answer exactly matches the ground truth (case-insensitive) | `EM = 1` if prediction equals ground truth, else `0` |
+| **F1 (Token Overlap)** | Evaluates precision and recall of shared tokens between prediction and ground truth | `F1 = 2 * (Precision * Recall) / (Precision + Recall)`, where `Precision = |P ∩ G| / |P|`, `Recall = |P ∩ G| / |G|` |
+| **Accuracy (Overlap-based)** | Checks for any token overlap between prediction and ground truth | `Accuracy = 1` if `|P ∩ G| > 0`, else `0` |
+| **Pass@k** | Indicates if at least one of k generated answers matches ground truth | `Pass@k = 1` if any of top `k` predictions match, else `0` |
+| **METEOR** | Assesses semantic similarity, considering synonyms, word order, and stemming | Uses METEOR algorithm: aligns prediction and ground truth, computes weighted harmonic mean of precision and recall |
 
 ### 🔧 Output Parsers
 
@@ -340,13 +360,24 @@ Raw LLM outputs are often unstructured strings that need transformation into spe
 
 ### 🔍 Retrievers
 
-Advanced retrieval strategies for sophisticated RAG implementations with comprehensive end-to-end examples:
+Advanced retrieval strategies for sophisticated RAG implementations with comprehensive end-to-end examples, now evaluated with performance metrics.
 
 | **Retriever Type** | **Implementation** | **Key Features** | **Best For** |
 |-------------------|-------------------|------------------|--------------|
 | **VectorStoreRetrieverMMR** | Maximum Marginal Relevance in RAG | • Diversity optimization<br>• Relevance-diversity balance<br>• Complete RAG pipeline integration | Avoiding redundant results, diverse content retrieval |
 | **ParentDocumentRetriever** | Hierarchical document retrieval in RAG | • Parent-child document relationships<br>• Context preservation<br>• Full RAG workflow demonstration | Long documents, maintaining context while chunking |
 | **MultiVectorRetriever** | Multiple vector representation in RAG | • Multiple embedding strategies<br>• Enhanced retrieval accuracy<br>• End-to-end RAG implementation | Complex documents, multi-aspect retrieval |
+
+**Performance Metrics for Retrievers**:
+
+| **Metric** | **Purpose** | **Calculation Formula** |
+|------------|-------------|-------------------------|
+| **Precision@10** | Measures proportion of top 10 retrieved documents that are relevant | `Precision@10 = (# relevant docs in top 10) / 10` |
+| **Recall@10** | Measures proportion of all relevant documents retrieved in top 10 | `Recall@10 = (# relevant docs in top 10) / (# total relevant docs)` |
+| **F1 Score** | Balances precision and recall | `F1 = 2 * (Precision * Recall) / (Precision + Recall)` |
+| **MRR (Mean Reciprocal Rank)** | Prioritizes ranking of first relevant document | `MRR = (1/Q) * Σ(1/rank_i)`, where `rank_i` is position of first relevant result |
+| **Hit@5** | Indicates if at least one relevant document is in top 5 | `Hit@5 = 1` if top 5 contains a relevant doc, else `0` |
+| **Faithfulness** | Evaluates if retrieved content aligns with ground truth | `Faithfulness = (# retrieved docs consistent with ground truth) / (# retrieved docs)` |
 
 Each retriever notebook includes:
 - **🔄 Complete RAG Pipeline** - From document loading to final answer generation
