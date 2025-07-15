@@ -78,7 +78,9 @@ LangChain-Playlist/
 ├── 🔧 Output Parsers/
 │   ├── OutputParser_StrOutputParser.ipynb
 │   ├── OutputParser_JSONOutputParser.ipynb
-│   └── OutputParser_XMLOutputParser.ipynb
+│   ├── OutputParser_XMLOutputParser.ipynb
+│   ├── OutputParser_PydanticOutputParser.ipynb
+│   └── OutputParser_StructuredOutputParser.ipynb
 │
 ├── 🔍 Retrievers/
 │   ├── VectorStoreRetrieverMMR-InsideRAG.ipynb
@@ -207,7 +209,7 @@ Master prompt engineering with comprehensive templating solutions, now evaluated
 |------------|-------------|-------------------------|
 | **Exact Match (EM)** | Measures if the model's answer exactly matches the ground truth (case-insensitive) | `EM = 1` if prediction equals ground truth, else `0` |
 | **F1 (Token Overlap)** | Evaluates precision and recall of shared tokens between prediction and ground truth | `F1 = 2 * (Precision * Recall) / (Precision + Recall)`, where `Precision = |P ∩ G| / |P|`, `Recall = |P ∩ G| / |G|` |
-| **Accuracy (Overlap-based)** | Checks for any token overlap between prediction and ground truth | `Accuracy = 1` if `|P ∩ G| > 0`, else `0` |
+| **Accuracy (Overlay-based)** | Checks for any token overlap between prediction and ground truth | `Accuracy = 1` if `|P ∩ G| > 0`, else `0` |
 | **Pass@k** | Indicates if at least one of k generated answers matches ground truth | `Pass@k = 1` if any of top `k` predictions match, else `0` |
 | **METEOR** | Assesses semantic similarity, considering synonyms, word order, and stemming | Uses METEOR algorithm: aligns prediction and ground truth, computes weighted harmonic mean of precision and recall |
 
@@ -260,6 +262,8 @@ Raw LLM outputs are often unstructured strings that need transformation into spe
 | **StrOutputParser** | String processing & cleanup | • Text normalization<br>• Whitespace handling<br>• Encoding standardization<br>• Content filtering | • Simple text responses<br>• Content summarization<br>• Text classification tasks<br>• Basic Q&A systems |
 | **JSONOutputParser** | JSON structure parsing | • Schema validation<br>• Type enforcement<br>• Nested object handling<br>• Error recovery | • API integrations<br>• Structured data extraction<br>• Database operations<br>• Complex data workflows |
 | **XMLOutputParser** | XML document parsing | • Hierarchical data extraction<br>• Namespace support<br>• Attribute parsing<br>• Document validation | • Configuration management<br>• Markup processing<br>• Legacy system integration<br>• Structured document workflows |
+| **PydanticOutputParser** | Pydantic-based parsing | • Type-safe data models<br>• Automatic validation<br>• Error handling<br>• Structured output enforcement | • Type-safe applications<br>• Complex data validation<br>• API integrations<br>• Production workflows |
+| **StructuredOutputParser** | Structured data parsing | • Flexible schema definition<br>• Custom format parsing<br>• Error recovery<br>• Dynamic output structuring | • Dynamic data extraction<br>• Custom format parsing<br>• Structured data workflows<br>• Integration with varied LLMs |
 
 #### 🎯 Parser Use Cases & Examples
 
