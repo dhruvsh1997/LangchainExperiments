@@ -23,6 +23,8 @@ This repository is your **go-to resource** for learning LangChain’s **Output P
 | `01_StrOutputParser.ipynb` | Parsing raw text | `StrOutputParser` |
 | `02_JSONOutputParser.ipynb` | Structured JSON output | `JSONOutputParser` |
 | `03_XMLOutputParser.ipynb` | Hierarchical XML parsing | `XMLOutputParser` |
+| `04_PydanticOutputParser.ipynb` | Type-safe data model parsing | `PydanticOutputParser` |
+| `05_StructuredOutputParser.ipynb` | Flexible structured data parsing | `StructuredOutputParser` |
 
 ---
 
@@ -54,6 +56,8 @@ Output Parsers in LangChain convert unpredictable LLM text into **structured, re
 | `StrOutputParser` | Freeform text (e.g., Q&A, summaries) | `str` |
 | `JSONOutputParser` | Structured, machine-readable data | `dict` |
 | `XMLOutputParser` | Nested, tag-based data | `ElementTree.Element` |
+| `PydanticOutputParser` | Type-safe applications with complex validation | `Pydantic Model` |
+| `StructuredOutputParser` | Dynamic structured data with custom schemas | `dict` |
 
 ---
 
@@ -71,6 +75,14 @@ Output Parsers in LangChain convert unpredictable LLM text into **structured, re
 - Parses well-formed XML into `ElementTree`.
 - Perfect for hierarchical data needs.
 
+### 📘 `04_PydanticOutputParser`
+- Uses Pydantic models for type-safe parsing.
+- Ideal for applications requiring strict data validation.
+
+### 📘 `05_StructuredOutputParser`
+- Parses custom structured outputs with flexible schemas.
+- Great for dynamic data extraction across varied LLMs.
+
 ---
 
 ## 🗂️ Project Structure
@@ -80,6 +92,8 @@ Output Parsers in LangChain convert unpredictable LLM text into **structured, re
 ├── 01_StrOutputParser.ipynb
 ├── 02_JSONOutputParser.ipynb
 ├── 03_XMLOutputParser.ipynb
+├── 04_PydanticOutputParser.ipynb
+├── 05_StructuredOutputParser.ipynb
 └── README.md
 ```
 
@@ -104,7 +118,6 @@ Output Parsers in LangChain convert unpredictable LLM text into **structured, re
 ## 🔜 Coming Soon
 
 - `RegexOutputParser`
-- `PydanticOutputParser`
 - `DataclassOutputParser`
 
 ---
