@@ -110,6 +110,12 @@ LangChain-Playlist/
 │   ├── NutritionAI_CustomNutritionAI_Tool.ipynb
 │   └── CustomEmailOperations_Tool.ipynb
 │
+├── 🔎 QueryBuilder/
+│   ├── Chainable Query Builders.ipynb
+│   ├── Static Query Builder.ipynb
+│   ├── Dynamic Query Builders.ipynb
+│   └── Metadata-based Query Builders.ipynb
+│
 └── 🤖 LLMs/
     └── [Coming Soon]
 ```
@@ -146,7 +152,7 @@ Transform diverse document formats into LLM-ready chunks with specialized loader
 
 | **Model Family** | **Variants** | **Strengths** |
 |------------------|--------------|---------------|
-| **MiniLM** | L6-v2, LAgainst-v2 | Fast inference, balanced performance |
+| **MiniLM** | L6-v2, L12-v2 | Fast inference, balanced performance |
 | **MPNet** | all-mpnet-base-v2, multi-qa-mpnet-base-dot-v1 | Superior semantic understanding |
 | **Multilingual** | gte-multilingual-base | Cross-language retrieval |
 | **Commercial** | OpenAI text-embedding-3-large, Cohere v3.0 | State-of-the-art accuracy |
@@ -241,7 +247,7 @@ Raw LLM outputs are often unstructured strings that need transformation into spe
 │         │          Detection]    Validation]       Casting]                │
 │         │              │            │                  │                    │
 │         │              ▼            ▼                  ▼                    │
-│         └────────► [Error Recovery & Retry Logic] ◄────┘                    │
+│         │              └────────► [Error Recovery & Retry Logic] ◄────┘    │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                        PARSER TYPES & USE CASES                            │
@@ -346,6 +352,34 @@ Each retriever notebook includes:
 - **🎯 Real-world Examples** - Practical use cases and implementations
 - **📈 Comparative Analysis** - Benchmarking against baseline retrievers
 
+### 🔎 Query Builders
+
+Construct precise and efficient queries for vector stores and databases with flexible query-building strategies.
+
+| **Query Builder Type** | **Implementation** | **Key Features** | **Best For** |
+|------------------------|--------------------|------------------|--------------|
+| **Chainable Query Builders** | Chained query construction | • Modular query composition<br>• Fluent API design<br>• Reusable query patterns | Complex, multi-step queries |
+| **Static Query Builder** | Predefined query structures | • Simplified query creation<br>• Fixed query templates<br>• High performance | Simple, repetitive queries |
+| **Dynamic Query Builders** | Runtime query generation | • Adaptive query logic<br>• Context-aware construction<br>• Parameterized queries | Dynamic, user-driven searches |
+| **Metadata-based Query Builders** | Metadata-driven query construction | • Metadata filtering<br>• Schema-aware queries<br>• Advanced filtering logic | Metadata-rich environments, precise retrieval |
+
+**Performance Metrics for Query Builders**:
+
+| **Metric** | **Purpose** | **Calculation Formula** |
+|------------|-------------|-------------------------|
+| **Query Execution Time** | Measures time taken to execute a query | `Time = End_time - Start_time` |
+| **Precision@10** | Measures proportion of top 10 retrieved results that are relevant | `Precision@10 = (# relevant results in top 10) / 10` |
+| **Recall@10** | Measures proportion of all relevant results retrieved in top 10 | `Recall@10 = (# relevant results in top 10) / (# total relevant results)` |
+| **F1 Score** | Balances precision and recall | `F1 = 2 * (Precision * Recall) / (Precision + Recall)` |
+| **Query Complexity** | Evaluates computational complexity of query construction | Qualitative assessment based on number of operations and conditions |
+
+Each query builder notebook includes:
+- **🔧 Query Construction Examples** - Step-by-step query building
+- **📊 Performance Metrics** - Query efficiency and retrieval quality
+- **⚙️ Configurable Parameters** - Customize query logic and filters
+- **🎯 Real-world Use Cases** - Practical applications in search and retrieval
+- **📈 Comparative Analysis** - Benchmarking against baseline query methods
+
 ### 🧠 Memory Systems (LangChain 0.1)
 
 Implement sophisticated conversation memory and context management for stateful LLM applications with comprehensive memory strategies:
@@ -406,7 +440,7 @@ Master the modern **Runnable** paradigm - LangChain's revolutionary approach to 
 │       │          Execution]     Routing]      Integration]                 │
 │       │              │              │              │                       │
 │       │              ▼              ▼              ▼                       │
-│       └────────► [Error Handling & Monitoring] ◄───┘                       │
+│       │              └────────► [Error Handling & Monitoring] ◄───┘        │
 │                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                        CORE RUNNABLE FEATURES                              │
@@ -574,6 +608,7 @@ pip install faiss-cpu chromadb sentence-transformers
    - Explore `Retrievers/` for advanced retrieval strategies
    - Learn `Memory (Langchain 0.1)/` for conversation state management
    - Master `Runnable (0.3)/` for modern LangChain architecture patterns
+   - **NEW: Dive into `QueryBuilder/` for efficient query construction**
 
 ## 📊 Notebook Features
 
