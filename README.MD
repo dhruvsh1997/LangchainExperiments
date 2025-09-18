@@ -9,7 +9,7 @@ A comprehensive collection of **hands-on Colab-style notebooks** for practical i
 
 ## 🎯 What You'll Learn
 
-This repository provides a systematic journey through the LangChain ecosystem, with each component carefully isolated to enable:
+This repository provides a systematic journey through the LangChain ecosystem, with each component carefully isolated to enable, Segmented Ratio Might be neede, Ragaas can be performed:
 
 - **🎓 Focused Learning** - Master individual components without complexity
 - **⚡ Performance Benchmarking** - Compare implementations with real metrics
