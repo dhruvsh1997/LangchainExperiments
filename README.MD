@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 
-A comprehensive collection of **hands-on Colab-style notebooks** for practical implementations and benchmarking of core LangChain components. Master the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines through structured, modular learning.
+A comprehensive collection of **hands-on Colab-style notebooks** for practical implementation and benchmarking of core LangChain components. Master the entire LLM application stack—from document processing to embeddings, vector stores, retrievers, and complete RAG pipelines through structured, modular learning.
 
 ## 🎯 What You'll Learn
 
