@@ -160,7 +160,7 @@ Transform diverse document formats into LLM-ready chunks with specialized loader
 
 **Performance Metrics for Embedding Models**:
 
-| **Metric** | **Purpose** | **Calculation Formula** |
+| **Metrics** | **Purpose** | **Calculation Formula** |
 |------------|-------------|-------------------------|
 | **MRR (Mean Reciprocal Rank)** | Measures ranking quality by prioritizing the first relevant result | `MRR = (1/Q) * Σ(1/rank_i)`, where `Q` is number of queries, `rank_i` is position of first relevant result for query `i` |
 | **MAP (Mean Average Precision)** | Evaluates precision across all relevant results | `MAP = (1/Q) * Σ(AP_q)`, where `AP_q = Σ(Precision@k * rel(k)) / # relevant docs`, `rel(k)` is 1 if item at rank `k` is relevant, else 0 |
