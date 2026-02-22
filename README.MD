@@ -20,7 +20,7 @@ This repository provides a systematic journey through the LangChain ecosystem, w
 
 ```
 LangChain-Playlist/
-├── 📄 Loader and Splitters/
+├── 📄 Loaders and Splitters/
 │   ├── PDF Based/
 │   │   ├── PyPDFLoader_with_SemanticChunker.ipynb
 │   │   ├── UnstructuredPDFLoader_with_RecursiveCharacterTextSplitter.ipynb
