@@ -128,7 +128,7 @@ Transform diverse document formats into LLM-ready chunks with specialized loader
 
 #### PDF Processing Pipeline
 
-| **Loader + Splitter** | **Key Features** | **Best For** |
+| **Loaders + Splitters** | **Key Features** | **Best For** |
 |------------------------|------------------|--------------|
 | **PyPDFLoader + SemanticChunker** | • Semantic coherence scoring<br>• Context-aware boundaries<br>• Token optimization | Research papers, long-form content |
 | **UnstructuredPDFLoader + RecursiveCharacterTextSplitter** | • Advanced structure detection<br>• Memory-efficient processing<br>• Content preservation | Complex layouts, mixed content |
