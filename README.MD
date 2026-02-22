@@ -16,7 +16,7 @@ This repository provides a systematic journey through the LangChain ecosystem, w
 - **🔧 Production-Ready Solutions** - Plug-and-play components for your applications
 - **📊 Visual Analytics** - Interactive metrics and performance comparisons
 
-## 📁 Repository Structure
+## 📁 Repository Structures
 
 ```
 LangChain-Playlist/
