@@ -100,7 +100,7 @@ LangChain-Playlist/
 │   └── Runnable_for_LLM_PipelineWithMessageHistory.ipynb
 │
 ├── 🔗 Chains/
-│   └── [Coming Soon]
+│   └── QAChain.ipynb
 │
 ├── 🛠️ Tools/
 │   ├── Tavily_Search_Extract_Tool.ipynb
